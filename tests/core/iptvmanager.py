@@ -18,3 +18,5 @@ class TestIptvEpg(TestCase):
 
     def test_send_epg(self):
         iptvmanager.epg.test(self.port)
+
+
