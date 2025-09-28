@@ -1,0 +1,350 @@
+<div class="swiper px-g overflow-visible" data-type="default" x-data="{
+        element: '',
+        swiper: config.carousels.default
+    }" x-init="
+        this.element = $el;
+        window.$.progress($($el).find('.js-progress'))
+        $nextTick(() => {
+            this.swiper = window.initSwiper($el, swiper)
+            this.swiper
+                .findArrows()
+                .findPagination()
+                .init()
+        })
+    ">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/30fbfcae-275f-11f0-841f-02259ab3bed7/murder-map-east-anglia',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d13969.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/30fbfcae-275f-11f0-841f-02259ab3bed7.jpg?width=700&amp;lang=en&amp;" alt="Murder Map - East Anglia" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder Map - East Anglia </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/30fbfcae-275f-11f0-841f-02259ab3bed7/murder-map-east-anglia?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Map - East Anglia</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/5ccfe708-46d2-11f0-9de3-02fed476212d/murder-map-scotland-and-northern-ireland',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d14e76.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/5ccfe708-46d2-11f0-9de3-02fed476212d.jpg?width=700&amp;lang=en&amp;" alt="Murder Map - Scotland and Northern Ireland" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder Map - Scotland and Northern Ireland </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/5ccfe708-46d2-11f0-9de3-02fed476212d/murder-map-scotland-and-northern-ireland?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Map - Scotland and Northern Ireland</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/c091e3de-2f12-11f0-986a-02fed476212d/murder-map-north-west-england',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d156e2.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/c091e3de-2f12-11f0-986a-02fed476212d.jpg?width=700&amp;lang=en&amp;" alt="Murder Map - North West England" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder Map - North West England </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/c091e3de-2f12-11f0-986a-02fed476212d/murder-map-north-west-england?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Map - North West England</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/908e0fed-4c27-11f0-9de3-02fed476212d/murder-map-south-west-england',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d15f69.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/908e0fed-4c27-11f0-9de3-02fed476212d.jpg?width=700&amp;lang=en&amp;" alt="Murder Map - South West England" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder Map - South West England </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/908e0fed-4c27-11f0-9de3-02fed476212d/murder-map-south-west-england?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Map - South West England</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/3abdcf73-1aa9-11f0-841f-02259ab3bed7/murder-map-wales',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d167a1.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/3abdcf73-1aa9-11f0-841f-02259ab3bed7.jpg?width=700&amp;lang=en&amp;" alt="Murder Map - Wales" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder Map - Wales </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/3abdcf73-1aa9-11f0-841f-02259ab3bed7/murder-map-wales?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Map - Wales</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/b4a76aa9-7127-11f0-9de3-02fed476212d/murder-map-london-south-east-england',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d17006.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/b4a76aa9-7127-11f0-9de3-02fed476212d.jpg?width=700&amp;lang=en&amp;" alt="Murder Map -  London &amp; South East England" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder Map - London &amp; South East England </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/b4a76aa9-7127-11f0-9de3-02fed476212d/murder-map-london-south-east-england?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Map - London &amp; South East England</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/9d1bfd73-791f-11f0-9de3-02fed476212d/murder-map-the-midlands',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d177b6.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/9d1bfd73-791f-11f0-9de3-02fed476212d.jpg?width=700&amp;lang=en&amp;" alt="Murder Map -  The Midlands" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder Map - The Midlands </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/9d1bfd73-791f-11f0-9de3-02fed476212d/murder-map-the-midlands?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Map - The Midlands</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/fa4af5e6-6183-11f0-9de3-02fed476212d/murder-map-yorkshire-and-north-east-england',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d17fd2.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/fa4af5e6-6183-11f0-9de3-02fed476212d.jpg?width=700&amp;lang=en&amp;" alt="Murder Map - Yorkshire and North East England" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder Map - Yorkshire and North East England </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/fa4af5e6-6183-11f0-9de3-02fed476212d/murder-map-yorkshire-and-north-east-england?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Map - Yorkshire and North East England</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination px-g"></div>
+    <div class="swiper-button swiper-button-prev d-flex w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+        </svg>
+    </div>
+    <div class="swiper-button swiper-button-next d-flex w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+        </svg>
+    </div>
+</div>

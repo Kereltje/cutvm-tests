@@ -1,0 +1,420 @@
+<div class="swiper px-g overflow-visible" data-type="default" x-data="{
+        element: '',
+        swiper: config.carousels.default
+    }" x-init="
+        this.element = $el;
+        window.$.progress($($el).find('.js-progress'))
+        $nextTick(() => {
+            this.swiper = window.initSwiper($el, swiper)
+            this.swiper
+                .findArrows()
+                .findPagination()
+                .init()
+        })
+    ">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/e120d05b-210a-11f0-841f-02259ab3bed7/donal-macintyres-uk-killer-evidence',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d15c49.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/e120d05b-210a-11f0-841f-02259ab3bed7.jpg?width=700&amp;lang=en&amp;" alt="Donal MacIntyre&#039;s UK Killer Evidence" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Donal MacIntyre&#039;s UK Killer Evidence </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/e120d05b-210a-11f0-841f-02259ab3bed7/donal-macintyres-uk-killer-evidence?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Donal MacIntyre&#039;s UK Killer Evidence</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/971809f7-ce40-11ed-bdce-06f38b7de9d9/bloodline-detectives',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d16ce1.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/971809f7-ce40-11ed-bdce-06f38b7de9d9.jpg?width=700&amp;lang=en&amp;" alt="Bloodline Detectives" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Bloodline Detectives </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/971809f7-ce40-11ed-bdce-06f38b7de9d9/bloodline-detectives?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Bloodline Detectives</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/dfa6cf4c-a304-11ed-bdce-06f38b7de9d9/killers-caught-on-camera',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d1735d.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/dfa6cf4c-a304-11ed-bdce-06f38b7de9d9.jpg?width=700&amp;lang=en&amp;" alt="Killers: Caught On Camera" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Killers: Caught On Camera </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/dfa6cf4c-a304-11ed-bdce-06f38b7de9d9/killers-caught-on-camera?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Killers: Caught On Camera</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/285f6148-fbe7-11ec-b4c6-0af62ebc70d1/murder-she-solved',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d17ae7.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/285f6148-fbe7-11ec-b4c6-0af62ebc70d1.jpg?width=700&amp;lang=en&amp;" alt="Murder She Solved" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder She Solved </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/285f6148-fbe7-11ec-b4c6-0af62ebc70d1/murder-she-solved?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder She Solved</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/9e415629-01b5-11eb-8876-0aa1bd83af14/new-scotland-yard-files',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d18143.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/9e415629-01b5-11eb-8876-0aa1bd83af14.jpg?width=700&amp;lang=en&amp;" alt="New Scotland Yard Files" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                New Scotland Yard Files </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/9e415629-01b5-11eb-8876-0aa1bd83af14/new-scotland-yard-files?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">New Scotland Yard Files</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/085eeb3c-cd70-11ed-bdce-06f38b7de9d9/to-catch-a-killer',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d187c8.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/085eeb3c-cd70-11ed-bdce-06f38b7de9d9.jpg?width=700&amp;lang=en&amp;" alt="To Catch A Killer" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                To Catch A Killer </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/085eeb3c-cd70-11ed-bdce-06f38b7de9d9/to-catch-a-killer?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">To Catch A Killer</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/9d8e545d-01b5-11eb-8876-0aa1bd83af14/murder-by-the-sea',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d18e51.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/9d8e545d-01b5-11eb-8876-0aa1bd83af14.jpg?width=700&amp;lang=en&amp;" alt="Murder By The Sea" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder By The Sea </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/9d8e545d-01b5-11eb-8876-0aa1bd83af14/murder-by-the-sea?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder By The Sea</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/72298b23-dca0-11ee-b7e3-0276c1f87d2f/secrets-of-a-murder-detective',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d194c4.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/72298b23-dca0-11ee-b7e3-0276c1f87d2f.jpg?width=700&amp;lang=en&amp;" alt="Secrets of a Murder Detective" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Secrets of a Murder Detective </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/72298b23-dca0-11ee-b7e3-0276c1f87d2f/secrets-of-a-murder-detective?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Secrets of a Murder Detective</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/d9a62194-4361-11ed-b4c6-0af62ebc70d1/murder-book',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d19b6f.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/d9a62194-4361-11ed-b4c6-0af62ebc70d1.jpg?width=700&amp;lang=en&amp;" alt="Murder Book" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                Murder Book </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/d9a62194-4361-11ed-b4c6-0af62ebc70d1/murder-book?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Book</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/88a449a7-b388-11ed-bdce-06f38b7de9d9/see-no-evil',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-68db078d1a1f3.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/88a449a7-b388-11ed-bdce-06f38b7de9d9.jpg?width=700&amp;lang=en&amp;" alt="See No Evil" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;">
+                                                See No Evil </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);"></p>
+                                            <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/88a449a7-b388-11ed-bdce-06f38b7de9d9/see-no-evil?autoplay=true';" style="margin-bottom: 4px;">
+                                                <i class="bi bi-play-fill"></i> Play
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">See No Evil</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination px-g"></div>
+    <div class="swiper-button swiper-button-prev d-flex w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+        </svg>
+    </div>
+    <div class="swiper-button swiper-button-next d-flex w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+        </svg>
+    </div>
+</div>

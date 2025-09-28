@@ -1,0 +1,1246 @@
+<div
+    class="swiper px-g overflow-visible"
+    data-type="default"
+    x-data="{
+        element: '',
+        swiper: config.carousels.default
+    }"
+    x-init="
+        this.element = $el;
+        window.$.progress($($el).find('.js-progress'))
+        $nextTick(() => {
+            this.swiper = window.initSwiper($el, swiper)
+            this.swiper
+                .findArrows()
+                .findPagination()
+                .init()
+        })
+    "
+>
+    <div class="swiper-wrapper">
+                                            <div class="swiper-slide" data-history>
+                    <div
+    x-init="window.$.progress($($el).find('.js-progress'))"
+    class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default"
+    style=""
+>
+            <a
+                x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/423c2ad4-4c19-11eb-bc19-06b69c2357cd/walker-texas-ranger',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }"
+                x-init="console.log(href)"
+                                x-on:play-position-updated-37509018.window="updateHref($event.detail)"
+                                :href="href"
+        >
+    
+    
+    <div
+        class="thumbnail position-relative grow "
+    >
+        
+        <div
+            class="ratio rounded img-placeholder ratio-16x9"
+            style=""
+        >
+        </div>
+
+        
+        <div
+            class="ratio rounded img-placeholder position-absolute ratio-16x9"
+            style="top: 0;"
+        >
+                            <img
+    src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;"
+    alt="Logo"
+    loading="lazy"
+    class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left"
+    style="z-index: 1; pointer-events: none; background: none;"
+/>
+            
+            
+                <div class="rounded overflow-hidden">
+                    
+                    <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+
+                        
+                        <img
+    src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/423c2ad4-4c19-11eb-bc19-06b69c2357cd.jpg?width=700&amp;lang=en&amp;"
+    alt="Walker, Texas Ranger"
+    loading="lazy"
+    class="default-img img card-img-top rounded-t w-100 h-100"
+    style="object-fit: cover;"
+/>
+
+                                                    <div
+                                class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                                                                <p
+    class="overlay-title"
+    style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;"
+>
+    Walker, Texas Ranger
+</p>
+
+<p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+    <span data-content-type="age-rating">
+                <span
+        class="badge badge-info badge-default"
+            >
+        PG
+    </span>
+    </span>
+            </span>
+
+                                                            </p>
+
+
+<button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/423c2ad4-4c19-11eb-bc19-06b69c2357cd/walker-texas-ranger?autoplay=true';" style="margin-bottom: 4px;">
+    <i class="bi bi-play-fill"></i> Play
+</button>
+
+<p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Chuck Norris fights crime and helps the community as the eponymous Walker. The robberies continue as Walker closes in on the culprits.</p>
+                                                                            </div>
+                            </div>
+                        
+                            <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;">
+                            
+                                                    </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+            </a>
+    
+            <div class="slider-card-sub">
+                                                                            
+                            <h6 class="card-title">Walker, Texas Ranger</h6>
+            
+                    </div>
+    </div>
+                </div>
+                                                                <div class="swiper-slide" data-history>
+                    <div
+    x-init="window.$.progress($($el).find('.js-progress'))"
+    class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default"
+    style=""
+>
+            <a
+                x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52408760/american-siege',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }"
+                x-init="console.log(href)"
+                                x-on:play-position-updated-52408760.window="updateHref($event.detail)"
+                                :href="href"
+        >
+    
+    
+    <div
+        class="thumbnail position-relative grow "
+    >
+        
+        <div
+            class="ratio rounded img-placeholder ratio-16x9"
+            style=""
+        >
+        </div>
+
+        
+        <div
+            class="ratio rounded img-placeholder position-absolute ratio-16x9"
+            style="top: 0;"
+        >
+                            <img
+    src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;"
+    alt="Logo"
+    loading="lazy"
+    class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left"
+    style="z-index: 1; pointer-events: none; background: none;"
+/>
+            
+            
+                <div class="rounded overflow-hidden">
+                    
+                    <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+
+                        
+                        <img
+    src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52408760.jpg?width=700&amp;lang=en&amp;"
+    alt="American Siege"
+    loading="lazy"
+    class="default-img img card-img-top rounded-t w-100 h-100"
+    style="object-fit: cover;"
+/>
+
+                                                    <div
+                                class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                                                                <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+    American Siege
+</p>
+
+<p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span
+        class="badge badge-info badge-default"
+            >
+        15+
+    </span>
+    </span>
+            </span>
+
+                                            <span class="bullet text-secondary ">
+        •
+    </span>
+
+            <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span>
+
+                                                                        </p>
+
+
+
+
+<p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Action with Bruce Willis. A small-town sheriff finds himself in a race against time when he&#039;s pressured to launch an assault on a gang of thieves who have taken a wealthy local doctor hostage.</p>
+
+
+                                                                    </div>
+                            </div>
+                        
+                            <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;">
+                            
+                                                    </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+            </a>
+    
+            <div class="slider-card-sub">
+                                                                        <h6 class="card-title"></h6>
+                                                
+                            <h6 class="card-title">American Siege</h6>
+            
+                    </div>
+    </div>
+                </div>
+                                                                <div class="swiper-slide" data-history>
+                    <div
+    x-init="window.$.progress($($el).find('.js-progress'))"
+    class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default"
+    style=""
+>
+            <a
+                x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/53029069/we-were-soldiers',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }"
+                x-init="console.log(href)"
+                                x-on:play-position-updated-53029069.window="updateHref($event.detail)"
+                                :href="href"
+        >
+    
+    
+    <div
+        class="thumbnail position-relative grow "
+    >
+        
+        <div
+            class="ratio rounded img-placeholder ratio-16x9"
+            style=""
+        >
+        </div>
+
+        
+        <div
+            class="ratio rounded img-placeholder position-absolute ratio-16x9"
+            style="top: 0;"
+        >
+                            <img
+    src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;"
+    alt="Logo"
+    loading="lazy"
+    class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left"
+    style="z-index: 1; pointer-events: none; background: none;"
+/>
+            
+            
+                <div class="rounded overflow-hidden">
+                    
+                    <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+
+                        
+                        <img
+    src="https://thumbnails.simplestreamcdn.com/amc/ondemand/53029069.jpg?width=700&amp;lang=en&amp;"
+    alt="We Were Soldiers"
+    loading="lazy"
+    class="default-img img card-img-top rounded-t w-100 h-100"
+    style="object-fit: cover;"
+/>
+
+                                                    <div
+                                class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                                                                <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+    We Were Soldiers
+</p>
+
+<p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span
+        class="badge badge-info badge-default"
+            >
+        15+
+    </span>
+    </span>
+            </span>
+
+                                            <span class="bullet text-secondary ">
+        •
+    </span>
+
+            <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span>
+
+                                                                        </p>
+
+
+
+
+<p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Fact-based Vietnam War drama with Mel Gibson. A veteran colonel is placed in charge of an elite combat division, who find themselves surrounded by overwhelming enemy forces.</p>
+
+
+                                                                    </div>
+                            </div>
+                        
+                            <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;">
+                            
+                                                    </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+            </a>
+    
+            <div class="slider-card-sub">
+                                                                        <h6 class="card-title"></h6>
+                                                
+                            <h6 class="card-title">We Were Soldiers</h6>
+            
+                    </div>
+    </div>
+                </div>
+                                                                <div class="swiper-slide" data-history>
+                    <div
+    x-init="window.$.progress($($el).find('.js-progress'))"
+    class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default"
+    style=""
+>
+            <a
+                x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52576260/cross-the-line',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }"
+                x-init="console.log(href)"
+                                x-on:play-position-updated-52576260.window="updateHref($event.detail)"
+                                :href="href"
+        >
+    
+    
+    <div
+        class="thumbnail position-relative grow "
+    >
+        
+        <div
+            class="ratio rounded img-placeholder ratio-16x9"
+            style=""
+        >
+        </div>
+
+        
+        <div
+            class="ratio rounded img-placeholder position-absolute ratio-16x9"
+            style="top: 0;"
+        >
+                            <img
+    src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;"
+    alt="Logo"
+    loading="lazy"
+    class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left"
+    style="z-index: 1; pointer-events: none; background: none;"
+/>
+            
+            
+                <div class="rounded overflow-hidden">
+                    
+                    <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+
+                        
+                        <img
+    src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52576260.jpg?width=700&amp;lang=en&amp;"
+    alt="Cross The Line"
+    loading="lazy"
+    class="default-img img card-img-top rounded-t w-100 h-100"
+    style="object-fit: cover;"
+/>
+
+                                                    <div
+                                class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                                                                <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+    Cross The Line
+</p>
+
+<p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span
+        class="badge badge-info badge-default"
+            >
+        15+
+    </span>
+    </span>
+            </span>
+
+                                            <span class="bullet text-secondary ">
+        •
+    </span>
+
+            <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span>
+
+                                                                        </p>
+
+
+
+
+<p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Action thriller. A veteran cop and a call centre operator must put aside issues with their failed marriage and collaborate with a criminal masterplan when their son is kidnapped.</p>
+
+
+                                                                    </div>
+                            </div>
+                        
+                            <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;">
+                            
+                                                    </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+            </a>
+    
+            <div class="slider-card-sub">
+                                                                        <h6 class="card-title"></h6>
+                                                
+                            <h6 class="card-title">Cross The Line</h6>
+            
+                    </div>
+    </div>
+                </div>
+                                                                <div class="swiper-slide" data-history>
+                    <div
+    x-init="window.$.progress($($el).find('.js-progress'))"
+    class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default"
+    style=""
+>
+            <a
+                x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/49798249/red-sonja',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }"
+                x-init="console.log(href)"
+                                x-on:play-position-updated-49798249.window="updateHref($event.detail)"
+                                :href="href"
+        >
+    
+    
+    <div
+        class="thumbnail position-relative grow "
+    >
+        
+        <div
+            class="ratio rounded img-placeholder ratio-16x9"
+            style=""
+        >
+        </div>
+
+        
+        <div
+            class="ratio rounded img-placeholder position-absolute ratio-16x9"
+            style="top: 0;"
+        >
+                            <img
+    src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;"
+    alt="Logo"
+    loading="lazy"
+    class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left"
+    style="z-index: 1; pointer-events: none; background: none;"
+/>
+            
+            
+                <div class="rounded overflow-hidden">
+                    
+                    <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+
+                        
+                        <img
+    src="https://thumbnails.simplestreamcdn.com/amc/ondemand/49798249.jpg?width=700&amp;lang=en&amp;"
+    alt="Red Sonja"
+    loading="lazy"
+    class="default-img img card-img-top rounded-t w-100 h-100"
+    style="object-fit: cover;"
+/>
+
+                                                    <div
+                                class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                                                                <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+    Red Sonja
+</p>
+
+<p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span>
+
+                                                                        </p>
+
+
+
+
+<p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Epic fantasy adventure with Brigitte Nielsen. Armed with a magic sword, a fearless warrior sets out to avenge her family&#039;s deaths and stop a murderous queen from using a powerful talisman.</p>
+
+
+                                                                    </div>
+                            </div>
+                        
+                            <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;">
+                            
+                                                    </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+            </a>
+    
+            <div class="slider-card-sub">
+                                                                        <h6 class="card-title"></h6>
+                                                
+                            <h6 class="card-title">Red Sonja</h6>
+            
+                    </div>
+    </div>
+                </div>
+                                                                <div class="swiper-slide" data-history>
+                    <div
+    x-init="window.$.progress($($el).find('.js-progress'))"
+    class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default"
+    style=""
+>
+            <a
+                x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/53029075/conan-the-barbarian',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }"
+                x-init="console.log(href)"
+                                x-on:play-position-updated-53029075.window="updateHref($event.detail)"
+                                :href="href"
+        >
+    
+    
+    <div
+        class="thumbnail position-relative grow "
+    >
+        
+        <div
+            class="ratio rounded img-placeholder ratio-16x9"
+            style=""
+        >
+        </div>
+
+        
+        <div
+            class="ratio rounded img-placeholder position-absolute ratio-16x9"
+            style="top: 0;"
+        >
+                            <img
+    src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;"
+    alt="Logo"
+    loading="lazy"
+    class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left"
+    style="z-index: 1; pointer-events: none; background: none;"
+/>
+            
+            
+                <div class="rounded overflow-hidden">
+                    
+                    <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+
+                        
+                        <img
+    src="https://thumbnails.simplestreamcdn.com/amc/ondemand/53029075.jpg?width=700&amp;lang=en&amp;"
+    alt="Conan The Barbarian"
+    loading="lazy"
+    class="default-img img card-img-top rounded-t w-100 h-100"
+    style="object-fit: cover;"
+/>
+
+                                                    <div
+                                class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                                                                <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+    Conan The Barbarian
+</p>
+
+<p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span
+        class="badge badge-info badge-default"
+            >
+        15+
+    </span>
+    </span>
+            </span>
+
+                                            <span class="bullet text-secondary ">
+        •
+    </span>
+
+            <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span>
+
+                                                                        </p>
+
+
+
+
+<p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Fantasy adventure remake with Jason Momoa. A warrior seeks revenge on the evil warlord who killed his father, and tries to stop him from magically making himself all-powerful.</p>
+
+
+                                                                    </div>
+                            </div>
+                        
+                            <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;">
+                            
+                                                    </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+            </a>
+    
+            <div class="slider-card-sub">
+                                                                        <h6 class="card-title"></h6>
+                                                
+                            <h6 class="card-title">Conan The Barbarian</h6>
+            
+                    </div>
+    </div>
+                </div>
+                                                                <div class="swiper-slide" data-history>
+                    <div
+    x-init="window.$.progress($($el).find('.js-progress'))"
+    class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default"
+    style=""
+>
+            <a
+                x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52115657/all-quiet-on-the-western-front',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }"
+                x-init="console.log(href)"
+                                x-on:play-position-updated-52115657.window="updateHref($event.detail)"
+                                :href="href"
+        >
+    
+    
+    <div
+        class="thumbnail position-relative grow "
+    >
+        
+        <div
+            class="ratio rounded img-placeholder ratio-16x9"
+            style=""
+        >
+        </div>
+
+        
+        <div
+            class="ratio rounded img-placeholder position-absolute ratio-16x9"
+            style="top: 0;"
+        >
+                            <img
+    src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;"
+    alt="Logo"
+    loading="lazy"
+    class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left"
+    style="z-index: 1; pointer-events: none; background: none;"
+/>
+            
+            
+                <div class="rounded overflow-hidden">
+                    
+                    <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+
+                        
+                        <img
+    src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52115657.jpg?width=700&amp;lang=en&amp;"
+    alt="All Quiet On The Western Front "
+    loading="lazy"
+    class="default-img img card-img-top rounded-t w-100 h-100"
+    style="object-fit: cover;"
+/>
+
+                                                    <div
+                                class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                                                                <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+    All Quiet On The Western Front 
+</p>
+
+<p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span
+        class="badge badge-info badge-default"
+            >
+        PG
+    </span>
+    </span>
+            </span>
+
+                                            <span class="bullet text-secondary ">
+        •
+    </span>
+
+            <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span>
+
+                                                                        </p>
+
+
+
+
+<p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Remake of the classic anti-war drama. A group of German schoolboys volunteer for action during the First World War, only to discover firsthand the grim and brutal reality of battle.</p>
+
+
+                                                                    </div>
+                            </div>
+                        
+                            <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;">
+                            
+                                                    </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+            </a>
+    
+            <div class="slider-card-sub">
+                                                                        <h6 class="card-title"></h6>
+                                                
+                            <h6 class="card-title">All Quiet On The Western Front </h6>
+            
+                    </div>
+    </div>
+                </div>
+                                                                <div class="swiper-slide" data-history>
+                    <div
+    x-init="window.$.progress($($el).find('.js-progress'))"
+    class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default"
+    style=""
+>
+            <a
+                x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52934979/primal',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }"
+                x-init="console.log(href)"
+                                x-on:play-position-updated-52934979.window="updateHref($event.detail)"
+                                :href="href"
+        >
+    
+    
+    <div
+        class="thumbnail position-relative grow "
+    >
+        
+        <div
+            class="ratio rounded img-placeholder ratio-16x9"
+            style=""
+        >
+        </div>
+
+        
+        <div
+            class="ratio rounded img-placeholder position-absolute ratio-16x9"
+            style="top: 0;"
+        >
+                            <img
+    src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;"
+    alt="Logo"
+    loading="lazy"
+    class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left"
+    style="z-index: 1; pointer-events: none; background: none;"
+/>
+            
+            
+                <div class="rounded overflow-hidden">
+                    
+                    <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+
+                        
+                        <img
+    src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52934979.jpg?width=700&amp;lang=en&amp;"
+    alt="Primal"
+    loading="lazy"
+    class="default-img img card-img-top rounded-t w-100 h-100"
+    style="object-fit: cover;"
+/>
+
+                                                    <div
+                                class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                                                                <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+    Primal
+</p>
+
+<p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span
+        class="badge badge-info badge-default"
+            >
+        15+
+    </span>
+    </span>
+            </span>
+
+                                            <span class="bullet text-secondary ">
+        •
+    </span>
+
+            <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span>
+
+                                                                        </p>
+
+
+
+
+<p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Action thriller with Nicolas Cage. A hunter and collector of rare and exotic animals sees his precious cargo freed onboard a ship by a political assassin being extradited to the Unites States.</p>
+
+
+                                                                    </div>
+                            </div>
+                        
+                            <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;">
+                            
+                                                    </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+            </a>
+    
+            <div class="slider-card-sub">
+                                                                        <h6 class="card-title"></h6>
+                                                
+                            <h6 class="card-title">Primal</h6>
+            
+                    </div>
+    </div>
+                </div>
+                                                                <div class="swiper-slide" data-history>
+                    <div
+    x-init="window.$.progress($($el).find('.js-progress'))"
+    class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default"
+    style=""
+>
+            <a
+                x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/53027705/push',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }"
+                x-init="console.log(href)"
+                                x-on:play-position-updated-53027705.window="updateHref($event.detail)"
+                                :href="href"
+        >
+    
+    
+    <div
+        class="thumbnail position-relative grow "
+    >
+        
+        <div
+            class="ratio rounded img-placeholder ratio-16x9"
+            style=""
+        >
+        </div>
+
+        
+        <div
+            class="ratio rounded img-placeholder position-absolute ratio-16x9"
+            style="top: 0;"
+        >
+                            <img
+    src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;"
+    alt="Logo"
+    loading="lazy"
+    class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left"
+    style="z-index: 1; pointer-events: none; background: none;"
+/>
+            
+            
+                <div class="rounded overflow-hidden">
+                    
+                    <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+
+                        
+                        <img
+    src="https://thumbnails.simplestreamcdn.com/amc/ondemand/53027705.jpg?width=700&amp;lang=en&amp;"
+    alt="Push"
+    loading="lazy"
+    class="default-img img card-img-top rounded-t w-100 h-100"
+    style="object-fit: cover;"
+/>
+
+                                                    <div
+                                class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                                                                <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+    Push
+</p>
+
+<p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span
+        class="badge badge-info badge-default"
+            >
+        15+
+    </span>
+    </span>
+            </span>
+
+                                            <span class="bullet text-secondary ">
+        •
+    </span>
+
+            <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span>
+
+                                                                        </p>
+
+
+
+
+<p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Sci-fi action thriller with Chris Evans. Two Americans with psychic abilities must find a girl in Hong Kong before a shadowy government organisation does.</p>
+
+
+                                                                    </div>
+                            </div>
+                        
+                            <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;">
+                            
+                                                    </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+            </a>
+    
+            <div class="slider-card-sub">
+                                                                        <h6 class="card-title"></h6>
+                                                
+                            <h6 class="card-title">Push</h6>
+            
+                    </div>
+    </div>
+                </div>
+                                                                <div class="swiper-slide" data-history>
+                    <div
+    x-init="window.$.progress($($el).find('.js-progress'))"
+    class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default"
+    style=""
+>
+            <a
+                x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/shows/e91ae94b-fc6b-4bba-8365-76e95ad5b21f/105-apocalypse',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }"
+                x-init="console.log(href)"
+                                x-on:play-position-updated-45409869.window="updateHref($event.detail)"
+                                :href="href"
+        >
+    
+    
+    <div
+        class="thumbnail position-relative grow "
+    >
+        
+        <div
+            class="ratio rounded img-placeholder ratio-16x9"
+            style=""
+        >
+        </div>
+
+        
+        <div
+            class="ratio rounded img-placeholder position-absolute ratio-16x9"
+            style="top: 0;"
+        >
+                            <img
+    src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;"
+    alt="Logo"
+    loading="lazy"
+    class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left"
+    style="z-index: 1; pointer-events: none; background: none;"
+/>
+            
+            
+                <div class="rounded overflow-hidden">
+                    
+                    <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+
+                        
+                        <img
+    src="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/e91ae94b-fc6b-4bba-8365-76e95ad5b21f.jpg?width=700&amp;lang=en&amp;"
+    alt="10.5 Apocalypse"
+    loading="lazy"
+    class="default-img img card-img-top rounded-t w-100 h-100"
+    style="object-fit: cover;"
+/>
+
+                                                    <div
+                                class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                                                                <p
+    class="overlay-title"
+    style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px;"
+>
+    10.5 Apocalypse
+</p>
+
+<p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+    <span data-content-type="age-rating">
+                <span
+        class="badge badge-info badge-default"
+            >
+        PG
+    </span>
+    </span>
+            </span>
+
+                                                            </p>
+
+
+<button class="btn btn-primary btn-sm" onclick="event.preventDefault(); event.stopPropagation(); location.href = 'https://www.watchfreeuk.co.uk/shows/e91ae94b-fc6b-4bba-8365-76e95ad5b21f/105-apocalypse?autoplay=true';" style="margin-bottom: 4px;">
+    <i class="bi bi-play-fill"></i> Play
+</button>
+
+<p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Action with Dean Cain. After a series of weather anomalies, a seismologist discovers the greatest threat of all: a fault line headed towards the country&#039;s two largest nuclear reactors.</p>
+                                                                            </div>
+                            </div>
+                        
+                            <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;">
+                            
+                                                    </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+            </a>
+    
+            <div class="slider-card-sub">
+                                                                            
+                            <h6 class="card-title">10.5 Apocalypse</h6>
+            
+                    </div>
+    </div>
+                </div>
+                                        </div>
+
+    <div class="swiper-pagination px-g">
+    </div>
+
+    <div class="swiper-button swiper-button-prev d-flex w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false"><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg>
+    </div>
+
+    <div class="swiper-button swiper-button-next d-flex w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false"><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg>
+    </div>
+</div>

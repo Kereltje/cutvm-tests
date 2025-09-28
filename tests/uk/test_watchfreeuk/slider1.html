@@ -1,0 +1,865 @@
+<div class="swiper px-g overflow-visible" data-type="default" x-data="{
+        element: '',
+        swiper: config.carousels.default
+    }" x-init="
+        this.element = $el;
+        window.$.progress($($el).find('.js-progress'))
+        $nextTick(() => {
+            this.swiper = window.initSwiper($el, swiper)
+            this.swiper
+                .findArrows()
+                .findPagination()
+                .init()
+        })
+    ">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-series" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52805433/48-hours',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-52805433.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto', }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52805433.jpg?width=700&amp;lang=en&amp;" alt="48 Hours" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                48 Hours </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-series">
+                                                        PG
+                                                    </span>
+                                                </span></span><span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Episode
+                                                    </span>
+                                                </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="season-episode">
+                                                    <span>
+                                                        S36:E1
+                                                    </span>
+                                                </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="duration">
+                                                    <span>
+                                                        42m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">
+                                                The bound bodies of four women are found along a desolate stretch of beach. Disturbing new details about the architect police say is a serial killer. </p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">48 Hours</h6>
+                    <p class="aired text-secondary mb-0">S36:E1</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-series" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/53027775/charlies-angels',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-53027775.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/53027775.jpg?width=700&amp;lang=en&amp;" alt="Charlie&#039;s Angels" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Charlie&#039;s Angels </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-series">
+                                                        PG
+                                                    </span>
+                                                </span></span><span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Episode
+                                                    </span>
+                                                </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="season-episode">
+                                                    <span>
+                                                        S2:E3
+                                                    </span>
+                                                </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="duration">
+                                                    <span>
+                                                        47m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">
+                                                The trio set out in search of ice skating stars Jack Ward and Helene Robinson, who have been kidnapped just before the opening of a major show. </p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Charlie&#039;s Angels</h6>
+                    <p class="aired text-secondary mb-0">S2:E3</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-series" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/36339710/medical-detectives',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-36339710.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/36339710.jpg?width=700&amp;lang=en&amp;" alt="Medical Detectives" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Medical Detectives </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-series">
+                                                        PG
+                                                    </span>
+                                                </span></span><span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Episode
+                                                    </span>
+                                                </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="season-episode">
+                                                    <span>
+                                                        S7:E3
+                                                    </span>
+                                                </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="duration">
+                                                    <span>
+                                                        22m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">
+                                                Top-notch forensic science helps solve real crimes. Investigators take to the water to determine who was responsible for a terrible attack on two boys out on a fishing trip. </p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Medical Detectives</h6>
+                    <p class="aired text-secondary mb-0">S7:E3</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-series" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/36339616/medical-detectives',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-36339616.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/36339616.jpg?width=700&amp;lang=en&amp;" alt="Medical Detectives" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Medical Detectives </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-series">
+                                                        PG
+                                                    </span>
+                                                </span></span><span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Episode
+                                                    </span>
+                                                </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="season-episode">
+                                                    <span>
+                                                        S7:E2
+                                                    </span>
+                                                </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="duration">
+                                                    <span>
+                                                        22m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">
+                                                Eight years after the murder of a woman in a Pizza Hut restaurant, a seemingly innocent man confesses to the crime. Was he the real killer? </p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Medical Detectives</h6>
+                    <p class="aired text-secondary mb-0">S7:E2</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-series" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/36927233/medical-detectives',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-36927233.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/36927233.jpg?width=700&amp;lang=en&amp;" alt="Medical Detectives" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Medical Detectives </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-series">
+                                                        PG
+                                                    </span>
+                                                </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Episode
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="season-episode">
+                                                    <span>
+                                                        S7:E1
+                                                    </span>
+                                                </span>
+                                                    <span class="bullet text-secondary ">
+                                                        •
+                                                    </span>
+                                                <span data-content-type="duration">
+                                                    <span>
+                                                        22m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">
+                                                Lead singer of the band &#039;Bob Kuban and the In Men&#039;, Walter Scott, wrote &#039;The Cheater&#039; a song that rang true in later life.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Medical Detectives</h6>
+                    <p class="aired text-secondary mb-0">S7:E1</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/36445166/riddles-of-the-sphinx',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-36445166.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/36445166.jpg?width=700&amp;lang=en&amp;" alt="Riddles Of The Sphinx" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Riddles Of The Sphinx </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-default">
+                                                        PG
+                                                    </span>
+                                                </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                •
+                                                </span>
+                                                <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Movie
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                •
+                                                </span>
+                                                <span data-content-type="duration">
+                                                    <span>
+                                                        1h 28m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Action adventure starring Dina Meyer (Starship Troopers). An astronomer and a cryptographer unwittingly unearth a murderous Sphinx and must solve deadly puzzles to trap it back in its tomb.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Riddles Of The Sphinx</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-series" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52842082/murder-map-yorkshire-and-north-east-england',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-52842082.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52842082.jpg?width=700&amp;lang=en&amp;" alt="Murder Map - Yorkshire and North East England" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Murder Map - Yorkshire and North East England </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-series">
+                                                        15+
+                                                    </span>
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Episode
+                                                </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="season-episode">
+                                                    <span>
+                                                        S1:E8
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                        •
+                                                    </span>
+                                                <span data-content-type="duration">
+                                                    <span>
+                                                        46m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Hartlepool, North East England. Having brutally murdered his wife in 1993, Hassan Shatanawi thought he had effectively made her vanish from the face of the earth, but he made one crucial oversight.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Map - Yorkshire and North East England</h6>
+                    <p class="aired text-secondary mb-0">S1:E8</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-series" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/53033441/murder-map-the-midlands',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-53033441.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/53033441.jpg?width=700&amp;lang=en&amp;" alt="Murder Map - The Midlands" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Murder Map - The Midlands </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-series">
+                                                        15+
+                                                    </span>
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                        •
+                                                </span>
+                                                <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                    Episode
+                                                </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                        •
+                                                </span>
+                                                <span data-content-type="season-episode">
+                                                    <span>
+                                                        S6:E12
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                        •
+                                                </span>
+                                                <span data-content-type="duration">
+                                                    <span>
+                                                        46m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Worcestershire, England, UK. After 18 years with his childhood sweetheart, Wayne Coventry seeks love. But his toxic relationship blinds him to dangers until it&#039;s too late.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Murder Map - The Midlands</h6>
+                    <p class="aired text-secondary mb-0">S6:E12</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-series" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/48180559/facing-evil',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-48180559.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/48180559.jpg?width=700&amp;lang=en&amp;" alt="Facing Evil" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Facing Evil </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-series">
+                                                        PG
+                                                    </span>
+                                                </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Episode
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="season-episode">
+                                                    <span>
+                                                        S4:E9
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="duration">
+                                                    <span>
+                                                        20m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">A friendship is unraveling. Then, on November 25th, the situation comes to a climax when 20-year-old Sylvilla Humphrey shoots 25-year-old Ercell Minix in the neck.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Facing Evil</h6>
+                    <p class="aired text-secondary mb-0">S4:E9</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-series" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/48161973/facing-evil',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-48161973.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/48161973.jpg?width=700&amp;lang=en&amp;" alt="Facing Evil" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Facing Evil </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                    <span data-content-type="age-rating">
+                                                            <span class="badge badge-info badge-series">
+                                                    PG
+                                                </span>
+                                                </span></span><span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="title">
+                                                            <span class="text-capitalize">
+                                                Episode
+                                            </span>            </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="season-episode">
+                                                            <span>
+                                                S4:E8
+                                            </span>            </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="duration">
+                                                            <span>
+
+
+
+                                                        20m
+                                                </span>            </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">A domestic dispute ends when LeMarcus Bell is killed by Tyra Whitney - his girlfriend&#039;s mother. Most mothers would do anything for their daughters. But how many would kill?</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Facing Evil</h6>
+                    <p class="aired text-secondary mb-0">S4:E8</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-series" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/48161395/facing-evil',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-48161395.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/48161395.jpg?width=700&amp;lang=en&amp;" alt="Facing Evil" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Facing Evil </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-series">
+                                                        PG
+                                                    </span>
+                                                </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Episode
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="season-episode">
+                                                    <span>
+                                                        S4:E7
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="duration">
+                                                    <span>
+                                                        20m
+                                                </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Jealousy, money and reputations are all tangled in this case. A mother of three is left a quadriplegic as two millionaires accuse each other of attempted murder.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Facing Evil</h6>
+                    <p class="aired text-secondary mb-0">S4:E7</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52711579/donal-macintyre-a-life-in-crime',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-52711579.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52711579.jpg?width=700&amp;lang=en&amp;" alt="Donal Macintyre: A Life in Crime" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Donal Macintyre: A Life in Crime </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                        <span class="badge badge-info badge-default">
+                                                15+
+                                            </span>
+                                            </span></span><span class="bullet text-secondary ">
+                                                •
+                                            </span> <span data-content-type="title">
+                                                        <span class="text-capitalize">
+                                            Episode
+                                        </span>            </span> <span class="bullet text-secondary ">
+                                                •
+                                            </span> <span data-content-type="duration">
+                                                        <span>
+
+
+
+                                                    47m
+                                            </span>            </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;"> For over 30 years, Donal MacIntyre has worked as an investigative reporter. This documentary is the story of Donal&#039;s life in crime.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Donal Macintyre: A Life in Crime</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination px-g"></div>
+    <div class="swiper-button swiper-button-prev d-flex w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+        </svg>
+    </div>
+    <div class="swiper-button swiper-button-next d-flex w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+        </svg>
+    </div>
+</div>

@@ -1,0 +1,357 @@
+<!-- Slider main container -->
+<div class="swiper hero overflow-visible px-g" data-type="hero" data-style="gallery" x-data="{
+        element: '',
+        swiper: config.carousels.hero.gallery
+    }" x-init="
+        this.element = $el;
+        window.$.progress($($el).find('.js-progress'))
+        this.swiper = window.initSwiper($el, swiper)
+        this.swiper
+            .findArrows()
+            .findPagination()
+            .init()
+
+        if(typeof this.swiper.swiper.slides[1] !== 'undefined') {
+            $dispatch('backgroundimage', {
+                src: this.swiper.swiper.slides[1].getAttribute('backgroundimage')
+            });
+        }
+
+        this.swiper.swiper.on('slideChange', (swiper) => {
+            if(typeof swiper.swiper !== 'undefined') {
+                if(typeof swiper.swiper.slides[1] !== 'undefined') {
+                    $dispatch('backgroundimage', {
+                        src: swiper.slides[swiper.activeIndex + 1].getAttribute('backgroundimage')
+                    });
+                }
+            }
+        });
+
+        $nextTick(() => { this.swiper.swiper.update() })
+    ">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" data-history backgroundimage="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/97d1bf34-01b5-11eb-8876-0aa1bd83af14.jpg?width=700&amp;lang=en&amp;">
+            <!-- Hero Slide -->
+            <div class="card border-0 rounded">
+                <div class="d-flex flex-row flex-wrap h-100" style="background: var(--img-placeholder, rgba(0,0,0,0.6))">
+                    <div style="position: absolute; bottom: 10px; left: 10px; z-index: 2;">
+                        <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img w-48 h-48 img-thumbnail bg-white" style="object-fit: cover; object-position: center; width: 64px; height: 64px;"/>
+                    </div>
+                    <div class="col-12 pointer" style="
+                                background: url('https://thumbnails.simplestreamcdn.com/amc/ondemand/series/97d1bf34-01b5-11eb-8876-0aa1bd83af14.jpg?width=700&amp;lang=en&amp;') no-repeat center center;
+                                background-size: cover;
+                            " onclick="fireAppsflyerTracking('', '97d1bf34-01b5-11eb-8876-0aa1bd83af14', 'series')">
+                        <a href="https://www.watchfreeuk.co.uk/shows/97d1bf34-01b5-11eb-8876-0aa1bd83af14">
+                            <div class="ratio ratio-16x9"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Appsflyer tracking -->
+            <script>
+                function fireAppsflyerTracking(title, id, type) {
+                    AF('pba', 'event', {
+                        eventType: 'EVENT',
+                        eventValue: {
+                            "af_content": title,
+                            "af_content_id": id,
+                            "af_content_type": type,
+                        },
+                        eventName: "ss_hero_click",
+                    });
+                }
+            </script>
+        </div>
+        <div class="swiper-slide" data-history backgroundimage="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/3abdcf73-1aa9-11f0-841f-02259ab3bed7.jpg?width=700&amp;lang=en&amp;">
+            <!-- Hero Slide -->
+            <div class="card border-0 rounded">
+                <div class="d-flex flex-row flex-wrap h-100" style="background: var(--img-placeholder, rgba(0,0,0,0.6))">
+                    <div style="position: absolute; bottom: 10px; left: 10px; z-index: 2;">
+                        <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img w-48 h-48 img-thumbnail bg-white" style="object-fit: cover; object-position: center; width: 64px; height: 64px;"/>
+                    </div>
+                    <div class="col-12 pointer" style="
+                                background: url('https://thumbnails.simplestreamcdn.com/amc/ondemand/series/3abdcf73-1aa9-11f0-841f-02259ab3bed7.jpg?width=700&amp;lang=en&amp;') no-repeat center center;
+                                background-size: cover;
+                            " onclick="fireAppsflyerTracking('', '3abdcf73-1aa9-11f0-841f-02259ab3bed7', 'series')">
+                        <a href="https://www.watchfreeuk.co.uk/shows/3abdcf73-1aa9-11f0-841f-02259ab3bed7">
+                            <div class="ratio ratio-16x9"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Appsflyer tracking -->
+            <script>
+                function fireAppsflyerTracking(title, id, type) {
+                    AF('pba', 'event', {
+                        eventType: 'EVENT',
+                        eventValue: {
+                            "af_content": title,
+                            "af_content_id": id,
+                            "af_content_type": type,
+                        },
+                        eventName: "ss_hero_click",
+                    });
+                }
+            </script>
+        </div>
+        <div class="swiper-slide" data-history backgroundimage="https://thumbnails.simplestreamcdn.com/amc/arion_hero_slide/242.jpg?width=700&amp;lang=en&amp;">
+            <!-- Hero Slide -->
+            <div class="card border-0 rounded">
+                <div class="d-flex flex-row flex-wrap h-100" style="background: var(--img-placeholder, rgba(0,0,0,0.6))">
+                    <div style="position: absolute; bottom: 10px; left: 10px; z-index: 2;">
+                        <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img w-48 h-48 img-thumbnail bg-white" style="object-fit: cover; object-position: center; width: 64px; height: 64px;"/>
+                    </div>
+                    <div class="col-12 pointer" style="
+                                background: url('https://thumbnails.simplestreamcdn.com/amc/arion_hero_slide/242.jpg?width=700&amp;lang=en&amp;') no-repeat center center;
+                                background-size: cover;
+                            " onclick="fireAppsflyerTracking('', 'a35bc9c0-aaa3-11ec-b4c6-0af62ebc70d1', 'series')">
+                        <a href="https://www.watchfreeuk.co.uk/shows/a35bc9c0-aaa3-11ec-b4c6-0af62ebc70d1">
+                            <div class="ratio ratio-16x9"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Appsflyer tracking -->
+            <script>
+                function fireAppsflyerTracking(title, id, type) {
+                    AF('pba', 'event', {
+                        eventType: 'EVENT',
+                        eventValue: {
+                            "af_content": title,
+                            "af_content_id": id,
+                            "af_content_type": type,
+                        },
+                        eventName: "ss_hero_click",
+                    });
+                }
+            </script>
+        </div>
+        <div class="swiper-slide" data-history backgroundimage="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/55420687-f5ec-11ef-841f-02259ab3bed7.jpg?width=700&amp;lang=en&amp;">
+            <!-- Hero Slide -->
+            <div class="card border-0 rounded">
+                <div class="d-flex flex-row flex-wrap h-100" style="background: var(--img-placeholder, rgba(0,0,0,0.6))">
+                    <div style="position: absolute; bottom: 10px; left: 10px; z-index: 2;">
+                        <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img w-48 h-48 img-thumbnail bg-white" style="object-fit: cover; object-position: center; width: 64px; height: 64px;"/>
+                    </div>
+                    <div class="col-12 pointer" style="
+                                background: url('https://thumbnails.simplestreamcdn.com/amc/ondemand/series/55420687-f5ec-11ef-841f-02259ab3bed7.jpg?width=700&amp;lang=en&amp;') no-repeat center center;
+                                background-size: cover;
+                            " onclick="fireAppsflyerTracking('', '55420687-f5ec-11ef-841f-02259ab3bed7', 'series')">
+                        <a href="https://www.watchfreeuk.co.uk/shows/55420687-f5ec-11ef-841f-02259ab3bed7">
+                            <div class="ratio ratio-16x9"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Appsflyer tracking -->
+            <script>
+                function fireAppsflyerTracking(title, id, type) {
+                    AF('pba', 'event', {
+                        eventType: 'EVENT',
+                        eventValue: {
+                            "af_content": title,
+                            "af_content_id": id,
+                            "af_content_type": type,
+                        },
+                        eventName: "ss_hero_click",
+                    });
+                }
+            </script>
+        </div>
+        <div class="swiper-slide" data-history backgroundimage="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/746849f8-738e-11f0-9de3-02fed476212d.jpg?width=700&amp;lang=en&amp;">
+            <!-- Hero Slide -->
+            <div class="card border-0 rounded">
+                <div class="d-flex flex-row flex-wrap h-100" style="background: var(--img-placeholder, rgba(0,0,0,0.6))">
+                    <div style="position: absolute; bottom: 10px; left: 10px; z-index: 2;">
+                        <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img w-48 h-48 img-thumbnail bg-white" style="object-fit: cover; object-position: center; width: 64px; height: 64px;"/>
+                    </div>
+                    <div class="col-12 pointer" style="
+                                background: url('https://thumbnails.simplestreamcdn.com/amc/ondemand/series/746849f8-738e-11f0-9de3-02fed476212d.jpg?width=700&amp;lang=en&amp;') no-repeat center center;
+                                background-size: cover;
+                            " onclick="fireAppsflyerTracking('', '746849f8-738e-11f0-9de3-02fed476212d', 'series')">
+                        <a href="https://www.watchfreeuk.co.uk/shows/746849f8-738e-11f0-9de3-02fed476212d">
+                            <div class="ratio ratio-16x9"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Appsflyer tracking -->
+            <script>
+                function fireAppsflyerTracking(title, id, type) {
+                    AF('pba', 'event', {
+                        eventType: 'EVENT',
+                        eventValue: {
+                            "af_content": title,
+                            "af_content_id": id,
+                            "af_content_type": type,
+                        },
+                        eventName: "ss_hero_click",
+                    });
+                }
+            </script>
+        </div>
+        <div class="swiper-slide" data-history backgroundimage="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/7643b7a7-d408-11ef-8fb8-065c11b39a45.jpg?width=700&amp;lang=en&amp;">
+            <!-- Hero Slide -->
+            <div class="card border-0 rounded">
+                <div class="d-flex flex-row flex-wrap h-100" style="background: var(--img-placeholder, rgba(0,0,0,0.6))">
+                    <div style="position: absolute; bottom: 10px; left: 10px; z-index: 2;">
+                        <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img w-48 h-48 img-thumbnail bg-white" style="object-fit: cover; object-position: center; width: 64px; height: 64px;"/>
+                    </div>
+                    <div class="col-12 pointer" style="
+                                background: url('https://thumbnails.simplestreamcdn.com/amc/ondemand/series/7643b7a7-d408-11ef-8fb8-065c11b39a45.jpg?width=700&amp;lang=en&amp;') no-repeat center center;
+                                background-size: cover;
+                            " onclick="fireAppsflyerTracking('', '7643b7a7-d408-11ef-8fb8-065c11b39a45', 'series')">
+                        <a href="https://www.watchfreeuk.co.uk/shows/7643b7a7-d408-11ef-8fb8-065c11b39a45">
+                            <div class="ratio ratio-16x9"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Appsflyer tracking -->
+            <script>
+                function fireAppsflyerTracking(title, id, type) {
+                    AF('pba', 'event', {
+                        eventType: 'EVENT',
+                        eventValue: {
+                            "af_content": title,
+                            "af_content_id": id,
+                            "af_content_type": type,
+                        },
+                        eventName: "ss_hero_click",
+                    });
+                }
+            </script>
+        </div>
+        <div class="swiper-slide" data-history backgroundimage="https://thumbnails.simplestreamcdn.com/amc/ondemand/53029069.jpg?width=700&amp;lang=en&amp;">
+            <!-- Hero Slide -->
+            <div class="card border-0 rounded">
+                <div class="d-flex flex-row flex-wrap h-100" style="background: var(--img-placeholder, rgba(0,0,0,0.6))">
+                    <div class="col-12 pointer" style="
+                                background: url('https://thumbnails.simplestreamcdn.com/amc/ondemand/53029069.jpg?width=700&amp;lang=en&amp;') no-repeat center center;
+                                background-size: cover;
+                            " onclick="fireAppsflyerTracking('', '53029069', 'show')">
+                        <a href="https://www.watchfreeuk.co.uk/watch/vod/53029069">
+                            <div class="ratio ratio-16x9"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Appsflyer tracking -->
+            <script>
+                function fireAppsflyerTracking(title, id, type) {
+                    AF('pba', 'event', {
+                        eventType: 'EVENT',
+                        eventValue: {
+                            "af_content": title,
+                            "af_content_id": id,
+                            "af_content_type": type,
+                        },
+                        eventName: "ss_hero_click",
+                    });
+                }
+            </script>
+        </div>
+        <div class="swiper-slide" data-history backgroundimage="https://thumbnails.simplestreamcdn.com/amc/ondemand/series/9bf851fd-01b5-11eb-8876-0aa1bd83af14.jpg?width=700&amp;lang=en&amp;">
+            <!-- Hero Slide -->
+            <div class="card border-0 rounded">
+                <div class="d-flex flex-row flex-wrap h-100" style="background: var(--img-placeholder, rgba(0,0,0,0.6))">
+                    <div style="position: absolute; bottom: 10px; left: 10px; z-index: 2;">
+                        <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/713.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img w-48 h-48 img-thumbnail bg-white" style="object-fit: cover; object-position: center; width: 64px; height: 64px;"/>
+                    </div>
+                    <div class="col-12 pointer" style="
+                                background: url('https://thumbnails.simplestreamcdn.com/amc/ondemand/series/9bf851fd-01b5-11eb-8876-0aa1bd83af14.jpg?width=700&amp;lang=en&amp;') no-repeat center center;
+                                background-size: cover;
+                            " onclick="fireAppsflyerTracking('', '9bf851fd-01b5-11eb-8876-0aa1bd83af14', 'series')">
+                        <a href="https://www.watchfreeuk.co.uk/shows/9bf851fd-01b5-11eb-8876-0aa1bd83af14">
+                            <div class="ratio ratio-16x9"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Appsflyer tracking -->
+            <script>
+                function fireAppsflyerTracking(title, id, type) {
+                    AF('pba', 'event', {
+                        eventType: 'EVENT',
+                        eventValue: {
+                            "af_content": title,
+                            "af_content_id": id,
+                            "af_content_type": type,
+                        },
+                        eventName: "ss_hero_click",
+                    });
+                }
+            </script>
+        </div>
+        <div class="swiper-slide" data-history backgroundimage="https://thumbnails.simplestreamcdn.com/amc/ondemand/53029075.jpg?width=700&amp;lang=en&amp;">
+            <!-- Hero Slide -->
+            <div class="card border-0 rounded">
+                <div class="d-flex flex-row flex-wrap h-100" style="background: var(--img-placeholder, rgba(0,0,0,0.6))">
+                    <div class="col-12 pointer" style="
+                                background: url('https://thumbnails.simplestreamcdn.com/amc/ondemand/53029075.jpg?width=700&amp;lang=en&amp;') no-repeat center center;
+                                background-size: cover;
+                            " onclick="fireAppsflyerTracking('', '53029075', 'show')">
+                        <a href="https://www.watchfreeuk.co.uk/watch/vod/53029075">
+                            <div class="ratio ratio-16x9"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Appsflyer tracking -->
+            <script>
+                function fireAppsflyerTracking(title, id, type) {
+                    AF('pba', 'event', {
+                        eventType: 'EVENT',
+                        eventValue: {
+                            "af_content": title,
+                            "af_content_id": id,
+                            "af_content_type": type,
+                        },
+                        eventName: "ss_hero_click",
+                    });
+                }
+            </script>
+        </div>
+        <div class="swiper-slide" data-history backgroundimage="https://thumbnails.simplestreamcdn.com/amc/ondemand/51743877.jpg?width=700&amp;lang=en&amp;">
+            <!-- Hero Slide -->
+            <div class="card border-0 rounded">
+                <div class="d-flex flex-row flex-wrap h-100" style="background: var(--img-placeholder, rgba(0,0,0,0.6))">
+                    <div class="col-12 pointer" style="
+                                background: url('https://thumbnails.simplestreamcdn.com/amc/ondemand/51743877.jpg?width=700&amp;lang=en&amp;') no-repeat center center;
+                                background-size: cover;
+                            " onclick="fireAppsflyerTracking('', '51743877', 'show')">
+                        <a href="https://www.watchfreeuk.co.uk/watch/vod/51743877">
+                            <div class="ratio ratio-16x9"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Appsflyer tracking -->
+            <script>
+                function fireAppsflyerTracking(title, id, type) {
+                    AF('pba', 'event', {
+                        eventType: 'EVENT',
+                        eventValue: {
+                            "af_content": title,
+                            "af_content_id": id,
+                            "af_content_type": type,
+                        },
+                        eventName: "ss_hero_click",
+                    });
+                }
+            </script>
+        </div>
+    </div>
+    <div class="swiper-pagination px-g"></div>
+    <div class="swiper-button swiper-button-prev w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+        </svg>
+    </div>
+    <div class="swiper-button swiper-button-next w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+        </svg>
+    </div>
+</div>

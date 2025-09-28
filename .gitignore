@@ -136,3 +136,5 @@ __marimo__/
 
 
 credentials.py
+!/kodi_home/
+!/kodi_profile/

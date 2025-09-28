@@ -1,0 +1,544 @@
+<div class="swiper px-g overflow-visible" data-type="default" x-data="{
+        element: '',
+        swiper: config.carousels.default
+    }" x-init="
+        this.element = $el;
+        window.$.progress($($el).find('.js-progress'))
+        $nextTick(() => {
+            this.swiper = window.initSwiper($el, swiper)
+            this.swiper
+                .findArrows()
+                .findPagination()
+                .init()
+        })
+    ">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52040025/the-hatton-garden-job',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-52040025.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52040025.jpg?width=700&amp;lang=en&amp;" alt="The Hatton Garden Job" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                The Hatton Garden Job </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-default">
+                                                        15+
+                                                    </span>
+                                                </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Movie
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="duration">
+                                                    <span>
+                                                        1h 28m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Crime drama based on true events. A ragtag group of ageing East End criminals plot an audacious, multi-million-pound raid on an underground facility in London.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">The Hatton Garden Job</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52831504/vendetta',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-52831504.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52831504.jpg?width=700&amp;lang=en&amp;" alt="Vendetta" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Vendetta </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                    <span data-content-type="age-rating">
+                                                            <span class="badge badge-info badge-default">
+                                                    18+
+                                                </span>
+                                                </span></span><span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="title">
+                                                            <span class="text-capitalize">
+                                                Movie
+                                            </span>            </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="duration">
+                                                            <span>
+
+
+
+                                                        1h 42m
+                                                </span>            </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">
+                                                Thriller with Danny Dyer. A rogue SAS officer sets out to punish the gang that murdered his parents, while the police team up with members of his old unit to stop him completing his mission.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Vendetta</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52458839/we-still-kill-the-old-way',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-52458839.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52458839.jpg?width=700&amp;lang=en&amp;" alt="We Still Kill The Old Way" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                We Still Kill The Old Way </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                    <span data-content-type="age-rating">
+                                                            <span class="badge badge-info badge-default">
+                                                    18+
+                                                </span>
+                                                </span></span><span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="title">
+                                                            <span class="text-capitalize">
+                                                Movie
+                                            </span>            </span> <span class="bullet text-secondary ">
+                                                    •
+                                                </span> <span data-content-type="duration">
+                                                            <span>
+
+
+
+                                                        1h 30m
+                                                </span>            </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Gritty British crime drama with Ian Ogilvy. A retired gangster returns to London and gets his old crew back together to avenge the death of his brother and restore order to the streets.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">We Still Kill The Old Way</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52762487/we-still-steal-the-old-way',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-52762487.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52762487.jpg?width=700&amp;lang=en&amp;" alt="We Still Steal the Old Way" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                We Still Steal the Old Way </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+                                                <span data-content-type="age-rating">
+                                                    <span class="badge badge-info badge-default">
+                                                        18+
+                                                    </span>
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                        •
+                                                </span>
+                                                <span data-content-type="title">
+                                                    <span class="text-capitalize">
+                                                        Movie
+                                                    </span>
+                                                </span>
+                                                <span class="bullet text-secondary ">
+                                                    •
+                                                </span>
+                                                <span data-content-type="duration">
+                                                    <span>
+                                                        1h 34m
+                                                    </span>
+                                                </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Crime drama sequel with Ian Ogilvy. After a daring heist puts them away in Britain&#039;s toughest prison, an aging criminal outfit encounters a nemesis intent on settling an old score.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">We Still Steal the Old Way</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52753493/the-hitmans-apprentice',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-52753493.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{'opacity': '1','pointer-events': 'auto',}">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52753493.jpg?width=700&amp;lang=en&amp;" alt="The Hitman&#039;s Apprentice" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                The Hitman&#039;s Apprentice </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span class="badge badge-info badge-default">
+        15+
+    </span>
+    </span></span><span class="bullet text-secondary ">
+        •
+    </span> <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span> <span class="bullet text-secondary ">
+        •
+    </span> <span data-content-type="duration">
+                <span>
+    
+    
+
+            1h 22m
+    </span>            </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Thriller with Tim Roth. A teenager is offered a job by his mother&#039;s crime boss boyfriend, only to find himself assisting a hitman on a mission leading to an encounter with a mysterious woman.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">The Hitman&#039;s Apprentice</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52789876/daylight-robbery',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-52789876.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52789876.jpg?width=700&amp;lang=en&amp;" alt="Daylight Robbery" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                Daylight Robbery </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span class="badge badge-info badge-default">
+        15+
+    </span>
+    </span></span><span class="bullet text-secondary ">
+        •
+    </span> <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span> <span class="bullet text-secondary ">
+        •
+    </span> <span data-content-type="duration">
+                <span>
+    
+    
+
+            1h 35m
+    </span>            </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Crime thriller with Geoff Bell. A gang of crooks plan to steal millions of pounds from a London exchange bank, but things go horribly wrong and the thieves are forced to take hostages.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">Daylight Robbery</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/52307819/a-study-in-terror',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-52307819.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/52307819.jpg?width=700&amp;lang=en&amp;" alt="A Study In Terror" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                A Study In Terror </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span class="badge badge-info badge-default">
+        15+
+    </span>
+    </span></span><span class="bullet text-secondary ">
+        •
+    </span> <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span> <span class="bullet text-secondary ">
+        •
+    </span> <span data-content-type="duration">
+                <span>
+    
+    
+
+            1h 30m
+    </span>            </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">Fact meets fiction in this compelling 1960s crime drama. Sherlock Holmes and Dr Watson join the hunt for the notorious serial killer known as Jack The Ripper.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">A Study In Terror</h6>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-history>
+            <div x-init="window.$.progress($($el).find('.js-progress'))" class="slider-card card bg-transparent border-0 rounded position-relative mb-0 card-default" style="">
+                <a x-data="{
+                    href: 'https://www.watchfreeuk.co.uk/watch/vod/49957336/they-made-me-a-fugitive',
+                    updateHref(playPosition){
+                        let url = new URL(this.href)
+                        url.searchParams.set('play_position', playPosition)
+                        this.href = url.toString()
+                    }
+                }" x-init="console.log(href)" x-on:play-position-updated-49957336.window="updateHref($event.detail)" :href="href">
+                    <div class="thumbnail position-relative grow ">
+                        <div class="ratio rounded img-placeholder ratio-16x9" style=""></div>
+                        <div class="ratio rounded img-placeholder position-absolute ratio-16x9" style="top: 0;">
+                            <img src="https://thumbnails.simplestreamcdn.com/amc/channel_logos/715.png?width=700&amp;" alt="Logo" loading="lazy" class="default-img img card-img-logo img-fluid img-thumbnail hide-on-grow bottom-left" style="z-index: 1; pointer-events: none; background: none;"/>
+                            <div class="rounded overflow-hidden">
+                                <div :style="{
+                    'opacity': '1',
+                    'pointer-events': 'auto',
+                 }">
+                                    <img src="https://thumbnails.simplestreamcdn.com/amc/ondemand/49957336.jpg?width=700&amp;lang=en&amp;" alt="They Made Me A Fugitive" loading="lazy" class="default-img img card-img-top rounded-t w-100 h-100" style="object-fit: cover;"/>
+                                    <div class="thumbnail-overlay position-absolute top-0 start-0 p-2 rounded d-none ">
+                                        <div class="d-flex flex-column justify-content-end align-items-start h-100 text-white">
+                                            <p class="overlay-title" style="font-size: 16px; line-height: 16px; font-weight: 700; margin-bottom: 8px; color: #ffffff">
+                                                They Made Me A Fugitive </p>
+                                            <p class="overlay-subtitle" style="font-size: 11px; line-height: 11px; margin-bottom: 8px;color: #FFFFFF; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);">
+        <span data-content-type="age-rating">
+                <span class="badge badge-info badge-default">
+        PG
+    </span>
+    </span></span><span class="bullet text-secondary ">
+        •
+    </span> <span data-content-type="title">
+                <span class="text-capitalize">
+    Movie
+</span>            </span> <span class="bullet text-secondary ">
+        •
+    </span> <span data-content-type="duration">
+                <span>
+    
+    
+
+            1h 36m
+    </span>            </span>
+                                            </p>
+                                            <p class="overlay-text mb-0" style="
+    font-size: 11px;
+    line-height: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;">British film noir. A former RAF pilot gets involved with Soho black marketeers and is framed for murder, forcing him to go on the run until he can exact revenge on them.</p>
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 end-0" style="margin-bottom: -1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="slider-card-sub">
+                    <h6 class="card-title">They Made Me A Fugitive</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination px-g"></div>
+    <div class="swiper-button swiper-button-prev d-flex w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+        </svg>
+    </div>
+    <div class="swiper-button swiper-button-next d-flex w-g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+        </svg>
+    </div>
+</div>
