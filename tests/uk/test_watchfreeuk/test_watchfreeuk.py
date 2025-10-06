@@ -9,7 +9,6 @@ from unittest import TestCase
 from unittest.mock import patch
 
 from resources.lib.channels.uk import watchfreeuk
-from resources.lib.channels.wo.aljazeera import list_items
 
 from testutils import open_doc
 
