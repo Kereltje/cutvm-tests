@@ -15,7 +15,7 @@ USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Ge
 
 
 class TestLogin(TestCase):
-    def test_login(self):
+    def test_login_web(self):
         with requests.Session() as sess:
             sess.headers = {
                 'user-agent': USER_AGENT,
@@ -62,6 +62,44 @@ class TestLogin(TestCase):
             cookies = resp.cookies
             self.assertTrue('4id_Identity' in cookies)
             self.assertTrue('4id_Session' in cookies)
+
+    def test_login_firestick(self):
+        """Mimic login from a firestick TV
+
+        URL and user-agent string from https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore/issues/1606
+        """
+        headers = {
+            'user-agent': 'Mozilla/5.0 (Linux; Android 11; AFTKM Build/RS8116.2387N; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.6367.248 Mobile Safari/537.36 All4/7.4.0-release',
+            # 'authorization': 'Basic eUExTHB6dGtHZUhaRDZuU2E3QzFBQUY2dkhwelZOblU6UXFFbUVnVVVVT1hUa3piNg=='
+        }
+        # Get auth token
+        resp = requests.get(
+            url='https://api.channel4.com/online/v2/auth/pin',
+            headers = headers)
+        self.assertEqual(200, resp.status_code)
+        self.assertEqual(resp.headers['authorization'], headers['authorization'])
+        pin_data  = resp.json()
+
+        # # Verify Email
+        # headers['authorization'] = 'Bearer jfeoBPdSObNHLu4mByJUeLJ4QZMy'
+        # resp = requests.post(
+        #     url='https://api.channel4.com/online/v1/identity/user/email',
+        #     headers=headers,
+        #     json={'emailAddress': UNAME}
+        # )
+        # self.assertEqual(200, resp.status_code)
+        # self.assertDictEqual(resp.json(), {"available": False})
+
+        # login
+        headers['authorization'] = 'Basic eUExTHB6dGtHZUhaRDZuU2E3QzFBQUY2dkhwelZOblU6UXFFbUVnVVVVT1hUa3piNg=='
+        resp = requests.post(
+            url='https://api.channel4.com/online/v2/auth/token?client=amazonfire-dash',
+            headers=headers,
+            data={'username': UNAME, 'password': PASSW, 'grant_type': 'password'}
+        )
+        self.assertEqual(200, resp.status_code)
+        rsp_data = resp.json()
+        pass
 
 
 class TestCategories(TestCase):
