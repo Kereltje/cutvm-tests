@@ -38,6 +38,18 @@ class TestMainPage(TestCase):
         for li in li_items:
             self.assertIsInstance(li, Listitem)
 
+@patch('resources.lib.channels.uk.my5.get_session_token', return_value='kjg')
+class TestMy5(TestCase):
+    @patch('urlquick.get',
+           return_value=HttpResponse(200, text=open_doc('chan5_continuewatching.json', my_dir)))
+    def test_continue_watching(self, _, __):
+        li_items = my5.list_continue_watching.test()
+        self.assertEqual(13, len(li_items))
+        for li in li_items:
+            self.assertIsInstance(li, Listitem)
+
+
+class TestUtils(TestCase):
     @patch('urlquick.get',
            return_value=HttpResponse(200, text=open_doc('chan5_watchables_search.json', my_dir)))
     def test_search_watchable(self, _):
