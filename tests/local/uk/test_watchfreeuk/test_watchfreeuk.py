@@ -231,7 +231,7 @@ class ListPage(TestCase):
 
 
 @patch("resources.lib.channels.uk.watchfreeuk.fetch",
-        return_value=parse_html(open_doc('series_cold-justice.html', my_dir)))
+        return_value=parse_html(open_doc('series_page.html', my_dir)))
 class ListSeriesAndEpisodes(TestCase):
     def test_list_series(self, _):
         li_items = watchfreeuk.list_series.test('series page')
@@ -240,12 +240,12 @@ class ListSeriesAndEpisodes(TestCase):
             self.assertIsInstance(item, Listitem)
 
     def test_list_episodes(self, _):
-        li_items = watchfreeuk.list_episodes.test(url='series page', series='season-2')
-        self.assertEqual(15, len(li_items))
+        li_items = watchfreeuk.list_episodes.test(url='series page', series='season-1')
+        self.assertEqual(10, len(li_items))
         for item in li_items:
             self.assertIsInstance(item, Listitem)
 
-        li_items = watchfreeuk.list_episodes.test(url='series page', series='season-5')
-        self.assertEqual(11, len(li_items))
+        li_items = watchfreeuk.list_episodes.test(url='series page', series='season-2')
+        self.assertEqual(9, len(li_items))
         for item in li_items:
             self.assertIsInstance(item, Listitem)
