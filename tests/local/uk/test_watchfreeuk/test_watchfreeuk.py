@@ -217,17 +217,15 @@ class RenderableComponent(TestCase):
 
 class ListPage(TestCase):
     @patch("resources.lib.channels.uk.watchfreeuk.fetch",
-           return_value=parse_html(open_doc('playlist_legend.html', my_dir)))
+           return_value=parse_html(open_doc('legend.html', my_dir)))
     def test_list_playlist_legend_page(self, _):
         """The page of collection 'LEGEND' has a different structure; it contains
         only a single slider and must be parsed like a normal slider's renderable
         content.
 
         """
-        with patch('resources.lib.channels.uk.watchfreeuk.list_renderable_component') as mocked_list_renderable:
-            li_items = watchfreeuk.list_page.test(url='legend.html', fallback_url='legend_slider.html')
-        mocked_list_renderable.assert_called_once()
-        self.assertEqual(mocked_list_renderable.call_args.args[1], 'legend_slider.html')
+        li_items = watchfreeuk.list_home_page.test(url='legend.html')
+        self.assertEqual(len(li_items), 10)
 
 
 @patch("resources.lib.channels.uk.watchfreeuk.fetch",

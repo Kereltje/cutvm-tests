@@ -33,6 +33,10 @@ class ListPage(TestCase):
         li_items = watchfreeuk.list_page.test('https://www.watchfreeuk.co.uk/page/true-crime')
         self.assertGreater(len(li_items), 5)
 
+    def test_list_legend(self):
+        li_items = watchfreeuk.list_home_page.test('https://www.watchfreeuk.co.uk/page/legend')
+        self.assertGreater(len(li_items), 5)
+
 
 class ListSeriesAndEpisodes(TestCase):
     show_url = 'https://www.watchfreeuk.co.uk/shows/9f32008b-01b5-11eb-8876-0aa1bd83af14/psychic-private-eyes'
