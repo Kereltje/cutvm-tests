@@ -191,7 +191,7 @@ class HomePage(TestCase):
            return_value=parse_html(open_doc('home.html', my_dir)))
     def test_home_page(self, _):
         li_items = watchfreeuk.list_home_page.test('home')
-        self.assertEqual(9, len(li_items))
+        self.assertEqual(10, len(li_items))
         for li in li_items[1:]:
             self.assertIsInstance(li, Listitem)
 
