@@ -224,8 +224,8 @@ class ListPage(TestCase):
         content.
 
         """
-        li_items = watchfreeuk.list_home_page.test(url='legend.html')
-        self.assertEqual(len(li_items), 10)
+        li_items = watchfreeuk.list_page.test(url='legend.html')
+        self.assertGreater(len(li_items), 100)
 
 
 @patch("resources.lib.channels.uk.watchfreeuk.fetch",
