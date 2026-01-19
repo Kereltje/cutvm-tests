@@ -55,6 +55,6 @@ class TestMy5Submenu(TestCase):
 
     def test_continue_watching(self,_):
         items = list(my5.list_continue_watching.test())
-        self.assertEqual(10, len(items))
+        self.assertEqual(15, len(items))
         for item in items:
             self.assertIsInstance(item, Listitem)
