@@ -23,6 +23,8 @@ except ImportError:
 from unittest import TestCase
 from datetime import datetime, timedelta, timezone
 
+import xbmcaddon
+
 from credentials import credentials
 
 from web.uk.chan4.device_data import devices, allowed_clients
