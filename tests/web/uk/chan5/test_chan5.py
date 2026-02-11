@@ -58,3 +58,10 @@ class TestMy5Submenu(TestCase):
         self.assertEqual(15, len(items))
         for item in items:
             self.assertIsInstance(item, Listitem)
+
+
+@patch('resources.lib.channels.uk.my5.get_session_token', return_value=TOKEN)
+class TestStreamData(TestCase):
+    def test_get_data(self, _):
+        url, auth, aes_key = my5.getdata('C5525120001', 'media')
+        pass
