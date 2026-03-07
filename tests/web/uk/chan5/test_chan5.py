@@ -65,3 +65,8 @@ class TestStreamData(TestCase):
     def test_get_data(self, _):
         url, auth, aes_key = my5.getdata('C5525120001', 'media')
         pass
+
+    def test_play_stream(self, _):
+        # Play Ellis S01E01
+        item = my5.get_video_url.test('', '', 'C5474860001', False)
+        self.assertIsInstance(item, Listitem)
