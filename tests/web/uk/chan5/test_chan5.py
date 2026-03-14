@@ -63,8 +63,12 @@ class TestMy5Submenu(TestCase):
 @patch('resources.lib.channels.uk.my5.get_session_token', return_value=TOKEN)
 class TestStreamData(TestCase):
     def test_get_data(self, _):
-        url, auth, aes_key = my5.getdata('C5525120001', 'media')
-        pass
+        keys = my5.getdata()
+        self.assertEqual(2, len(keys))
+
+    def test_iv_data(self, _):
+        keys = my5.getdata()
+        iv, data, aes_key = my5.ivdata('C5474860001', 'media', keys)
 
     def test_play_stream(self, _):
         # Play Ellis S01E01

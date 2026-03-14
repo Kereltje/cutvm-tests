@@ -5,6 +5,7 @@ import time
 from unittest import TestCase
 from unittest.mock import patch, MagicMock
 
+import urlquick
 from codequick import Listitem
 
 from resources.lib.channels.uk import my5
@@ -78,3 +79,57 @@ class TestUtils(TestCase):
         self.assertEqual(result, '[COLOR orange]Only 1 hour available.[/COLOR]')
         result = my5.availability(now + 1800)
         self.assertEqual(result, '[COLOR orange]Only 0 hours available.[/COLOR]')
+
+
+class TestIvDataRetry(TestCase):
+    """Since it's unknown in which order hmac and aes keys appear in the set of keys passed
+    to iv_data(), the function just tries one and if the server return 403, swaps the keys
+    and retries.
+
+    """
+    def setUp(self):
+        self.keys =  ('bcdefghijklmnopqrstuvw==', 'BCDAFGHIJKLMNOPGRSTUVW==')
+
+    @patch('urlquick.get', return_value=HttpResponse(text=open_doc('data/stream_data.json', my_dir)))
+    def test_iv_data_without_swap(self, p_get):
+        iv, data, aeskey = my5.ivdata('ITEMID', 'media', self.keys)
+        self.assertEqual(aeskey, self.keys[0])
+        p_get.assert_called_once()
+
+    @patch('codequick.script.Settings.__setitem__')
+    @patch('urlquick.get', return_value=HttpResponse(text=open_doc('data/stream_data.json', my_dir)))
+    @patch('resources.lib.channels.uk.my5.Script.setting.get_boolean',
+           new=lambda x: True if x == my5.SETTING_ID_KEYS_REVERSED else False)
+    def test_iv_data_swapped_by_setting(self, p_get, p_settings_set):
+        iv, data, aeskey = my5.ivdata('ITEMID', 'media', self.keys)
+        self.assertEqual(aeskey, self.keys[1])
+        p_get.assert_called_once()
+        p_settings_set.assert_not_called()
+
+    @patch('codequick.script.Settings.__setitem__')
+    @patch('urlquick.get', side_effect=(
+            urlquick.HTTPError(response=HttpResponse(403)),
+            HttpResponse(text=open_doc('data/stream_data.json', my_dir))))
+    def test_iv_data_swapped_by_403_response(self, p_get, p_settings_set):
+        iv, data, aeskey = my5.ivdata('ITEMID', 'media', self.keys)
+        self.assertEqual(aeskey, self.keys[1])
+        self.assertEqual(2, p_get.call_count)
+        p_settings_set.assert_called_once_with(my5.SETTING_ID_KEYS_REVERSED, 'true')
+
+    @patch('urlquick.get', side_effect=urlquick.HTTPError(response=HttpResponse(403)))
+    def test_iv_data_fails_on_second_attempt(self, p_get):
+        """Should fail after retry"""
+        self.assertRaises(urlquick.HTTPError, my5.ivdata, 'ITEMID', 'media', self.keys)
+        self.assertEqual(2, p_get.call_count)
+
+    @patch('urlquick.get', side_effect=urlquick.HTTPError(response=HttpResponse(400)))
+    def test_iv_data_fails_on_other_http_error(self, p_get):
+        """Should fail immediately, without retry"""
+        self.assertRaises(urlquick.HTTPError, my5.ivdata, 'ITEMID', 'media', self.keys)
+        p_get.assert_called_once()
+
+    @patch('urlquick.get', side_effect=urlquick.ConnectTimeout)
+    def test_iv_data_fails_on_other_error(self, p_get):
+        """Should fail immediately, without retry"""
+        self.assertRaises(urlquick.ConnectTimeout, my5.ivdata, 'ITEMID', 'media', self.keys)
+        p_get.assert_called_once()
