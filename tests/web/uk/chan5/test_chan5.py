@@ -70,6 +70,8 @@ class TestStreamData(TestCase):
         keys = my5.getdata()
         iv, data, aes_key = my5.ivdata('C5474860001', 'media', keys)
 
+    # @patch('resources.lib.channels.uk.my5.Script.setting.get_boolean',
+    #        new=lambda x: True if x == my5.SETTING_ID_KEYS_REVERSED else False)
     def test_play_stream(self, _):
         # Play Ellis S01E01
         item = my5.get_video_url.test('', '', 'C5474860001', False)
