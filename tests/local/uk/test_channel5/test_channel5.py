@@ -1,6 +1,9 @@
 
 import os
 import time
+import math
+import re
+import json
 
 from unittest import TestCase
 from unittest.mock import patch, MagicMock
@@ -133,3 +136,44 @@ class TestIvDataRetry(TestCase):
         """Should fail immediately, without retry"""
         self.assertRaises(urlquick.ConnectTimeout, my5.ivdata, 'ITEMID', 'media', self.keys)
         p_get.assert_called_once()
+
+
+class PlayerDataEntropy(TestCase):
+    def get_entropy(self, data):
+        """Calculate the Shannon entropy of the decoded bytes."""
+        if not data:
+            return 0
+        data_len = len(data)
+        entropy = 0
+        for x in range(256):
+            p_x = float(data.count(x)) / data_len
+            if p_x > 0:
+                entropy += - p_x * math.log(p_x, 2)
+        return entropy
+
+    def test_sout_entropy(self):
+        sout = open_doc('data/sout_26-03-16.txt', my_dir).encode('ascii')
+        keys = re.compile(rb'([A-Za-z0-9+/]{22}==).*?([A-Za-z0-9+/]{22}==)').findall(sout)[0]
+
+        found = []
+        for i in range(len(sout) - 24):
+            test_str = sout[i:i + 24]
+            entropy = self.get_entropy(test_str)
+            if entropy > 3 and test_str not in keys:
+                found.append(f'{test_str} - {entropy}')
+
+        print("a" * 35)
+        print(keys)
+        print(f'File size: {len(sout)} bytes')
+        print(f'Found {len(found)} random strings, ({len(found) * 100/(len(sout)-24)}% of all possible sequences of 24 characters.)')
+        print(json.dumps(found, indent=4))
+
+    def test_key_entropy(self):
+        import re
+
+        for filename in ('sout.txt', 'sout_26-03-13.txt', 'sout_26-03-14.txt', 'sout_26-03-16.txt'):
+            fullname = 'data/' + filename
+            sout = open_doc(fullname, my_dir).encode('ascii')
+            keys = re.compile(rb'([A-Za-z0-9+/]{22}==).*?([A-Za-z0-9+/]{22}==)').findall(sout)[0]
+            antropy = [self.get_entropy(k) for k in keys]
+            print(filename, antropy)
