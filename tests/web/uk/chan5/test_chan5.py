@@ -7,6 +7,8 @@ from codequick import Listitem
 from credentials import credentials
 from resources.lib.channels.uk import my5
 
+import xbmc
+
 
 UNAME = credentials['uk']['chan5']['uname']
 PASSW = credentials['uk']['chan5']['passw']
@@ -35,6 +37,24 @@ class TestMenu(TestCase):
     def test_submenu_my5(self):
         items = list(my5.list_submenu_my5.test())
         self.assertEqual(len(items), 3)
+        for item in items:
+            self.assertIsInstance(item, Listitem)
+
+    def test_submenu_collections(self):
+        items = list(my5.list_collections.test(browse_name='PLC_My5DesktopFASTHomePageSubNav'))
+        self.assertGreater(len(items), 5)
+        for item in items:
+            self.assertIsInstance(item, Listitem)
+
+
+class Collections(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        xbmc.getRegion =  lambda x: '%Y-%m-%d' if x == 'dateshort' else '%H:%M:%S'
+
+    def test_collection_live(self):
+        items = list(my5.list_collections.test(browse_name='PLC_My5FASTLiveTVPageSubTempWithAMC'))
+        self.assertGreater(len(items), 20)
         for item in items:
             self.assertIsInstance(item, Listitem)
 
