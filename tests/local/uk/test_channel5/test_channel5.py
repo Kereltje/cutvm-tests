@@ -38,7 +38,7 @@ class TestMainPage(TestCase):
            )
     def test_list_main_page(self, _):
         li_items = my5.list_main_page.test()
-        self.assertEqual(14, len(li_items))
+        self.assertEqual(15, len(li_items))
         for li in li_items:
             self.assertIsInstance(li, Listitem)
 
