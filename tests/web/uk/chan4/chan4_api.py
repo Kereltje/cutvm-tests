@@ -1,20 +1,75 @@
+import time
+import os
+import json
 
+import re
 import requests
 
 from unittest import TestCase
 
+import xbmcaddon
 
 from credentials import credentials
-
+from web.uk.chan4 import test_chan4
+from resources.lib.channels.uk import channel4
 
 UNAME = credentials['uk']['chan4']['uname']
 PASSW = credentials['uk']['chan4']['passw']
-CAPTCHA_TKN = credentials['uk']['chan4']['captchaToken']
-
+# CAPTCHA_TKN = credentials['uk']['chan4']['captchaToken']
+TOKENS = {}
 USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36'
 
 
+def read_tokens():
+    global TOKENS
+    cache_file = os.path.join(os.environ['KODI_PROFILE'], 'addon_data/plugin.video.catchuptvandmore/channel4_auth.json')
+    with open(cache_file, 'r') as f:
+        TOKENS = json.load(f)
+
+
+def setUpModule():
+    xbmcaddon.Addon._Addon__settings['plugin.video.catchuptvandmore']['uk.channel4.login'] = UNAME
+    xbmcaddon.Addon._Addon__settings['plugin.video.catchuptvandmore']['uk.channel4.password'] = PASSW
+    channel4.CACHE_FILE = os.path.abspath(
+        channel4.CACHE_FILE.replace('special://userdata', os.environ['KODI_PROFILE']))
+    read_tokens()
+    if int(TOKENS['issuedAt']) / 1000 + int(TOKENS['expiresIn']) < time.time() + 300:
+        test_case = test_chan4.TestLogin()
+        test_case.test_refresh()
+        read_tokens()
+
+
 class TestLogin(TestCase):
+    def test_recaptcha(self):
+        resp = requests.get(
+            url='https://www.channel4.com/sign-in-or-register',
+            headers={
+                'user-agent': USER_AGENT,
+                'accept-language': 'en-GB,en;q=0.5',
+                'origin': 'https://www.channel4.com',
+                'sec-fetch-site': 'same-origin',
+                'referer': 'https://www.channel4.com/',
+                'sec-fetch-mode': 'navigate',
+                'sec-fetch-dest': 'document',
+            }
+        )
+        site_key = re.search(r'"siteKey":"(\w+)",', resp.text)
+
+        resp = requests.post(
+            url='https://www.google.com/recaptcha/enterprise/reload?k=' + site_key,
+            headers={
+                'user-agent': USER_AGENT,
+                'accept-language': 'en-GB,en;q=0.5',
+                'origin': 'https://www.google.com',
+                'referer': 'https://www.google.com/recaptcha/enterprise/anchor?ar=1&k=6Leyk3gbAAAAAFXvdqcW04M6tVBCBxkn2u4176Js&co=aHR0cHM6Ly93d3cuY2hhbm5lbDQuY29tOjQ0Mw..&hl=en&v=U5VsmTDhJM1iOJUyw4DEUTYv&size=invisible&anchor-ms=20000&execute-ms=30000&cb=d4cgz5olg2uz_GRECAPTCHA=09AKhCRwhzPEpWhAzqfSakVksWIkDcb-ND38_qIW6K5dqasoQSCJmJdzNuZ-mlo399pEOv4u5vmcBUZAN91S7NI7I',
+                'sec-fetch-site': 'same-origin',
+                'sec-fetch-mode': 'cors',
+                'sec-fetch-dest': 'empty',
+            }
+
+        )
+
+
     def test_login(self):
         with requests.Session() as sess:
             sess.headers = {
