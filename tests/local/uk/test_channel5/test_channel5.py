@@ -21,24 +21,26 @@ my_dir = os.path.abspath(os.path.dirname(__file__))
 
 class TestMainPage(TestCase):
     @patch('urlquick.get',
-           side_effect=(
-                   HttpResponse(200, text=open_doc('PLC_My5DesktopHeroRail.json', my_dir)),
-                   HttpResponse(200, text=open_doc('hero_content.json', my_dir)))
-           )
+           return_value=HttpResponse(200, text=open_doc('PLC_My5DesktopFeaturedRail.json', my_dir)))
     def test_parse_hero_items(self, _):
-        li_items = my5.list_collections.test('hero')
-        self.assertEqual(11, len(li_items))
+        li_items = list(my5.list_corona_collection('hero'))
+        self.assertEqual(10, len(li_items))
         for li in li_items:
             self.assertIsInstance(li, Listitem)
 
     @patch('urlquick.get',
-           side_effect=(
-                   HttpResponse(200, text=open_doc('PLC_My5DesktopHeroRail.json', my_dir)),
-                   HttpResponse(200, text=open_doc('hero_content.json', my_dir)))
-           )
+           return_value=HttpResponse(200, text=open_doc('PLC_My5DesktopFeaturedRail.json', my_dir)))
     def test_list_main_page(self, _):
         li_items = my5.list_main_page.test()
-        self.assertEqual(15, len(li_items))
+        self.assertEqual(14, len(li_items))
+        for li in li_items:
+            self.assertIsInstance(li, Listitem)
+
+    @patch('resources.lib.channels.uk.my5.list_corona_collection', side_effect=ValueError)
+    def test_list_main_page_with_error_on_hero(self, _):
+        """Should just disregard hero items and continue with the rest of the page."""
+        li_items = my5.list_main_page.test()
+        self.assertEqual(4, len(li_items))
         for li in li_items:
             self.assertIsInstance(li, Listitem)
 

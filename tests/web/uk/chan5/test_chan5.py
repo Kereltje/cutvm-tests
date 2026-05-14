@@ -30,7 +30,7 @@ class Login(TestCase):
 class TestMenu(TestCase):
     def test_main_page(self):
         items = list(my5.list_main_page.test())
-        self.assertAlmostEqual(len(items), 15, delta=2)
+        self.assertAlmostEqual(len(items), 14, delta=2)
         for item in items:
             self.assertIsInstance(item, Listitem)
 
