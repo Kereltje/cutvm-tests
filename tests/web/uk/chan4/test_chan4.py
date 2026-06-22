@@ -1,7 +1,7 @@
+import os
 from unittest import TestCase
 from unittest.mock import patch
 
-import urlquick
 from codequick import Listitem
 
 from credentials import credentials
@@ -12,11 +12,14 @@ import xbmcaddon
 
 UNAME = credentials['uk']['chan4']['uname']
 PASSW = credentials['uk']['chan4']['passw']
+TOKENS = credentials['uk']['chan4']['tokens']
 
 
 def setUpModule():
     xbmcaddon.Addon._Addon__settings['plugin.video.catchuptvandmore']['uk.channel4.login'] = UNAME
     xbmcaddon.Addon._Addon__settings['plugin.video.catchuptvandmore']['uk.channel4.password'] = PASSW
+    channel4.CACHE_FILE = os.path.abspath(
+        channel4.CACHE_FILE.replace('special://userdata', os.environ['KODI_PROFILE']))
 
 
 class TestSearch(TestCase):

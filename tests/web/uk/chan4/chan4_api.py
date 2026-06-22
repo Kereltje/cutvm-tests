@@ -6,6 +6,7 @@ import re
 import requests
 
 from unittest import TestCase
+from datetime import datetime, timedelta, timezone
 
 import xbmcaddon
 
@@ -117,6 +118,58 @@ class TestLogin(TestCase):
             cookies = resp.cookies
             self.assertTrue('4id_Identity' in cookies)
             self.assertTrue('4id_Session' in cookies)
+
+
+class TvPairing(TestCase):
+    HEADERS = {
+        'user_agent': 'Mozilla/5.0 (Linux ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.128 Safari/537.36 OPR/46.0.2207.0 OMI/4.23.2.96.LIMA2.85 Model/Vestel-MB181 VSTVB MB100 FVC/8.0 (BUSH; MB181; ) HbbTV/1.6.1 (+DRM; BUSH; MB181; 3.9.5.0; ; _TV_G36_2023;) SmartTv',
+        'authorization': 'Basic Z0FJY0hFRjZZOUJ2akVMNnR4azF2TDZyQ1htQW5hZnA6MjRIYnRqSkp2SDNjTHQ4MA==',
+        'origin': 'https://google.bsd.client.streaming.channel4.com',
+        'Referer': 'https://google.bsd.client.streaming.channel4.com/'
+    }
+
+    def get_pin(self):
+        resp = requests.get(
+            'https://api.channel4.com/online/v2/auth/pin',
+            headers=self.HEADERS
+        )
+        self.assertEqual(resp.status_code, 200)
+        resp_data = resp.json()
+        self.assertTrue('userCode' in resp_data)
+        self.assertTrue('deviceCode' in resp_data)
+        self.assertEqual(resp_data['expiresIn'], 600)
+        self.assertEqual(resp_data['nextPollIn'], 5)
+        self.assertEqual(resp_data['verification']['url'], 'channel4.com/code')
+        create_date = datetime.fromisoformat(resp_data['createDate'])
+        self.assertAlmostEqual(create_date, datetime.now(tz=timezone.utc), delta=timedelta(seconds=2))
+        self.assertTrue('urlForStaticQr' in resp_data['verification'])
+        self.assertTrue('urlForDynamicQr' in resp_data['verification'])
+        return resp_data
+
+    def check_token(self, device_code, create_date, expected_result=False):
+        """Check whether login and paring with another device has succeeded.
+        """
+        resp = requests.post(
+            'https://api.channel4.com/online/v2/auth/token',
+            json={
+                'grant_type': 'pin_pairing',
+                'code': device_code,
+                'create_date': create_date
+            }
+        )
+        self.assertEqual(resp.status_code, 200)
+        resp_data = resp.json()
+        self.assertIs(resp_data['paired'], expected_result)
+        if expected_result is False:
+            self.assertEqual(len(resp_data), 1)
+        else:
+            for field in ('accessToken', 'refreshToken', 'c4id', 'securityToken'):
+                self.assertTrue(resp_data[field])
+            self.assertEqual(resp_data['tokenType'], 'BearerToken')
+            self.assertAlmostEqual(int(resp_data['expiresIn']), 10799, delta=500)                   # 3 hours
+            self.assertAlmostEqual(int(resp_data['issuedAt']), time.time(), delta=10)
+            self.assertAlmostEqual(int(resp_data['refreshTokenExpiresIn']), 63071999, delta=500)    # 2 years
+            self.assertAlmostEqual(int(resp_data['refreshTokenIssuedAt']), time.time(), delta=10)
 
 
 class TestCategories(TestCase):
