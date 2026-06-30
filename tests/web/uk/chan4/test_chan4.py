@@ -31,3 +31,14 @@ class TestSearch(TestCase):
         items = list(channel4.do_search.test("poeliejoepa"))
         self.assertEqual(len(items), 1)
         self.assertIs(items[0], False)
+
+
+class TestLogin(TestCase):
+    def test_login(self):
+        result = channel4.login()
+        pass
+
+    def test_refresh(self):
+        global TOKENS
+        result = channel4.refresh(TOKENS['refreshToken'])
+        TOKENS['accessToken'] = result
