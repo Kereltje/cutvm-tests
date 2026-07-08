@@ -1,0 +1,950 @@
+{
+  "adobeAnalytics": {
+    "preventDuplicateRequest": true
+  },
+  "advertTimeout": 5000,
+  "autoplayCountdown": {
+    "enabled": true,
+    "value": 10000
+  },
+  "autoplayLimit": 4,
+  "backendEnv": "prod",
+  "braze": {
+    "enabled": false,
+    "gatewayUrl": "sdk.fra-01.braze.eu",
+    "isAnalyticsEnabled": false,
+    "isInAppMessageEnabled": false,
+    "key": "a4eb5dd9-59ec-4fdf-9496-158b5c984d22",
+    "minimumIntervalBetweenTriggerActionsInSeconds": 100
+  },
+  "consoleLogsInSumo": false,
+  "conviva": {
+    "account": "c3.Channel4",
+    "convivaAppAnalytics": {
+      "customEventsEnabled": false,
+      "enabled": false
+    },
+    "enabled": true,
+    "gatewayUrl": "",
+    "key": "b45f12f3d1d8ff61fde258f94943ae3b02a43d94",
+    "useTouchstone2": false
+  },
+  "defaultRequestConfig": {
+    "backOffFactor": 1.5,
+    "maxRetries": 3,
+    "retryIntervals": 1000,
+    "shouldRetry": true,
+    "timeout": 30000
+  },
+  "deviceGroup": "console",
+  "deviceOverrides": [
+    {
+      "description": "BDT-5178 Disable WL on certain devices based on ETV testing",
+      "model": [
+        "2ktv",
+        "32fd2k",
+        "32gd2x25k",
+        "32mtd6000z",
+        "32rs520k",
+        "32rs530k",
+        "32rs550k",
+        "4kavtexfrhd18",
+        "40fd2k",
+        "40fdxk",
+        "40mtd6000yuk",
+        "40mtd6000z",
+        "40rs520k",
+        "43fd2k",
+        "43fj2k",
+        "43rc630k",
+        "43rp620k",
+        "43rp630k",
+        "4k_android_tv_v01",
+        "50fj2k",
+        "50fjxk",
+        "50rp620k",
+        "55fj2k",
+        "55fjxk",
+        "55rc650k",
+        "55rp620k",
+        "55rp630k",
+        "65rp630k",
+        "c2224wsh",
+        "em32rok",
+        "fvp6486x",
+        "fvp6683",
+        "kdl_32we613",
+        "kdl_40we663",
+        "l32g5nk",
+        "l32rhe23",
+        "l40rfe23",
+        "l43rue23",
+        "lt_24cr230",
+        "lt_32cr230",
+        "lt_40cr330",
+        "lt_43cr330",
+        "mb110",
+        "mb130",
+        "mb211",
+        "pr43u3421skb",
+        "pr55u3421skb",
+        "r43_",
+        "r50_",
+        "r55_",
+        "rk32hn1",
+        "rk40fq1o",
+        "rk43un1o",
+        "rk55un1",
+        "rr32hd1",
+        "rr40fhd1",
+        "rt51",
+        "rt51m",
+        "sl24sbwcr",
+        "smarttv2018mid",
+        "smarttv2020mid",
+        "t3",
+        "t3r",
+        "t4",
+        "t4r",
+        "tk_sky_32_ath_h",
+        "tk_sky_40_ath_h",
+        "tk_sky_43_ath_u",
+        "viera2015mid",
+        "viera2016mid",
+        "viera2017low",
+        "vr32hx230",
+        "vr43ux230"
+      ],
+      "override": {
+        "features": {
+          "watchLive": {
+            "enabled": false
+          }
+        }
+      }
+    },
+    {
+      "description": "Disable Dash on Philips and netgem devices",
+      "deviceFamily": [
+        "freeview"
+      ],
+      "manufacturer": [
+        "philips",
+        "netgem"
+      ],
+      "override": {
+        "deviceStrings": {
+          "apiClient": "fvc",
+          "liveStreamClient": "fvc",
+          "vodStreamClient": "fvc"
+        },
+        "features": {
+          "adSubtitles": {
+            "enabled": false
+          },
+          "watchLive": {
+            "enabled": false
+          }
+        },
+        "player": {
+          "playerOverwrite": {
+            "alternativePlayerToUse": ""
+          }
+        }
+      }
+    },
+    {
+      "description": "Disable Dash on FV devices BDT-3292",
+      "model": [
+        "2k_android_tv_v01",
+        "4ktv",
+        "cvte",
+        "fvp4000t",
+        "fvp6486",
+        "fvp6586",
+        "fvp6886",
+        "fvp9685",
+        "fvp_4kgtr",
+        "kd_32w800",
+        "kd_43x72k",
+        "kd_49xf9005",
+        "kd_50x72k",
+        "kd_55ag8",
+        "mlr53_2k",
+        "mlr53_4k",
+        "ms86",
+        "pfs6908",
+        "pus8108",
+        "ref20_2kandroidtv_v01",
+        "sl410",
+        "sl420",
+        "smarttv2018low",
+        "smarttv2019low",
+        "smarttv2019mid",
+        "smarttv2020low",
+        "smarttv2021mid",
+        "smarttv2022mid",
+        "smarttv_2016",
+        "mb120",
+        "mb100",
+        "mb170",
+        "mb171",
+        "mb185",
+        "mb230",
+        "w50_e60",
+        "w50_k6hp",
+        "w50_k6lp",
+        "winston",
+        "43uh610v-za",
+        "49uh610v-za",
+        "55uh610v-za",
+        "49uh650v-za",
+        "55uh650v-za",
+        "65uh770v-za",
+        "60uh850v-za",
+        "75uh850v-za",
+        "65uh950v-za",
+        "43uh620v-za",
+        "55uh770v-za",
+        "60uh770v-za",
+        "65uh850v-za",
+        "75uh950v-za",
+        "32lh510b-za",
+        "43lh570v-za",
+        "49lh570v-za",
+        "55lh575v-za",
+        "oled55b6v-za",
+        "oled65b6v-za",
+        "oled55c6v-za",
+        "oled65c6v-za",
+        "oled55e6v-za",
+        "oled65e6v-za",
+        "oled65g6v-za",
+        "oled77g6v-za",
+        "24tn510s_pz",
+        "28tn515s_pz",
+        "32lm6370pla",
+        "32lm6300pla",
+        "32lm630bpla",
+        "32lm637bpla",
+        "32lm637bpla.aek",
+        "43lm6300pla",
+        "43lm6300pla.aek",
+        "43uh661v_zf",
+        "43uh668v_za",
+        "49uh668v_za",
+        "55uh668v_za",
+        "43uh650v_zb",
+        "28tn525s_pz",
+        "28tn525s_pz.aekrnup",
+        "24tn520s_pz",
+        "32lm631c0za",
+        "32lm6380plc",
+        "key0108012f",
+        "key0000012f",
+        "28tn515s-wz",
+        "32lm6200gna",
+        "24tn510s-wz",
+        "lg32lm6300",
+        "43lm6300",
+        "28tn525s-pz.aekrnu",
+        "43lm6370pla",
+        "32lm637bpla.bekkljp",
+        "32lm697bpla",
+        "28tn515s.aek",
+        "43lm6300la",
+        "32ll630bpla",
+        "32lm6300plm",
+        "28tn515s-pz.aekrnu",
+        "32lm6300",
+        "28tn515s",
+        "24tn510s-pz.aek",
+        "43A53FEVS"
+      ],
+      "override": {
+        "deviceStrings": {
+          "apiClient": "fvc",
+          "liveStreamClient": "fvc",
+          "vodStreamClient": "fvc"
+        },
+        "features": {
+          "adSubtitles": {
+            "enabled": false
+          },
+          "watchLive": {
+            "enabled": false
+          }
+        },
+        "player": {
+          "playerOverwrite": {
+            "alternativePlayerToUse": ""
+          }
+        }
+      }
+    },
+    {
+      "description": "Disable Visual Scrubbing for FV devices BDT-3189",
+      "model": [
+        "kdl_32we613",
+        "kd_43x7000e",
+        "fvp4000t",
+        "fvp_4kgtr",
+        "n7800",
+        "n7950",
+        "t3",
+        "t3r",
+        "rt51m",
+        "65pus8506:12",
+        "viera2016mid"
+      ],
+      "override": {
+        "features": {
+          "visualScrubbing": {
+            "enabled": false
+          }
+        }
+      }
+    },
+    {
+      "description": "Disable Visual Scrubbing for Netgem HP set-top boxes",
+      "deviceType": [
+        "stb"
+      ],
+      "manufacturer": [
+        "netgem"
+      ],
+      "override": {
+        "features": {
+          "visualScrubbing": {
+            "enabled": false
+          }
+        }
+      }
+    },
+    {
+      "description": "Freely devices",
+      "deviceFamily": [
+        "freely"
+      ],
+      "override": {
+        "features": {
+          "adSubtitles": {
+            "enabled": true
+          },
+          "watchLive": {
+            "enabled": true,
+            "subtitlesEnabled": true,
+            "timeToFFUponStart": 0,
+            "yospace": {
+              "enabled": true,
+              "siteSectionId": "freely.watchlive.channel4.com/{{channel}}",
+              "startAgainEnabled": true
+            }
+          }
+        },
+        "platform": "freely",
+        "player": {
+          "config": {
+            "vod": {
+              "streaming": {
+                "forceHTTPS": true
+              }
+            }
+          },
+          "playerOverwrite": {
+            "alternativePlayerToUse": "freeview-shakaplayer"
+          }
+        },
+        "stream": {
+          "videoProfileDashVOD": "bigscreendashpr-dyn-stream-1"
+        }
+      }
+    },
+    {
+      "description": "lg devices launched from native wrapper, non-Freeview",
+      "manufacturer": [
+        "lg"
+      ],
+      "override": {
+        "features": {
+          "adSubtitles": {
+            "enabled": true
+          },
+          "watchLive": {
+            "enabled": true,
+            "subtitlesEnabled": true,
+            "timeToFFUponStart": 0,
+            "yospace": {
+              "enabled": true,
+              "siteSectionId": "lg.watchlive.channel4.com/{{channel}}",
+              "startAgainEnabled": true
+            }
+          }
+        },
+        "omniture": {
+          "platform": "lg"
+        },
+        "platform": "lg",
+        "platformDisplayName": "lg"
+      }
+    },
+    {
+      "description": "BDT-5794 Enable WL/WLSA/DAI and use Shaka player",
+      "manufacturer": [
+        "lg",
+        "lge",
+        "hisense",
+        "vidaa"
+      ],
+      "override": {
+        "features": {
+          "adSubtitles": {
+            "enabled": true
+          },
+          "watchLive": {
+            "enabled": true,
+            "subtitlesEnabled": true,
+            "timeToFFUponStart": 0,
+            "yospace": {
+              "enabled": true,
+              "startAgainEnabled": true
+            }
+          }
+        },
+        "freewheel": {
+          "hdAdEnabled": true
+        },
+        "player": {
+          "config": {
+            "vod": {
+              "streaming": {
+                "forceHTTPS": true
+              }
+            }
+          },
+          "playerOverwrite": {
+            "alternativePlayerToUse": "freeview-shakaplayer"
+          }
+        },
+        "stream": {
+          "videoProfileDashVOD": "bigscreendashpr-dyn-stream-1"
+        }
+      },
+      "year": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    },
+    {
+      "description": "BDT-5971 Enable HD Ads for LG",
+      "manufacturer": [
+        "lg"
+      ],
+      "override": {
+        "freewheel": {
+          "hdAdEnabled": true
+        }
+      }
+    },
+    {
+      "description": "BDT-5819 Enable WL/WLSA/DAI and use Shaka player for Vestel (2018+)",
+      "manufacturer": [
+        "vestel"
+      ],
+      "override": {
+        "features": {
+          "adSubtitles": {
+            "enabled": true
+          },
+          "watchLive": {
+            "enabled": true,
+            "subtitlesEnabled": true,
+            "timeToFFUponStart": 0,
+            "yospace": {
+              "enabled": true,
+              "startAgainEnabled": true
+            }
+          }
+        },
+        "freewheel": {
+          "hdAdEnabled": true
+        },
+        "player": {
+          "config": {
+            "vod": {
+              "streaming": {
+                "forceHTTPS": true
+              }
+            }
+          },
+          "playerOverwrite": {
+            "alternativePlayerToUse": "freeview-shakaplayer"
+          }
+        },
+        "stream": {
+          "videoProfileDashVOD": "bigscreendashpr-dyn-stream-1"
+        }
+      },
+      "year": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    },
+    {
+      "description": "BDT-5819 Enable WL/WLSA/DAI and use Shaka player for Vestel models (2018+)",
+      "model": [
+        "mb180",
+        "mb181",
+        "mb190",
+        "mb191",
+        "mb211",
+        "mb250",
+        "mb281"
+      ],
+      "override": {
+        "features": {
+          "adSubtitles": {
+            "enabled": true
+          },
+          "watchLive": {
+            "enabled": true,
+            "subtitlesEnabled": true,
+            "timeToFFUponStart": 0,
+            "yospace": {
+              "enabled": true,
+              "startAgainEnabled": true
+            }
+          }
+        },
+        "freewheel": {
+          "hdAdEnabled": true
+        },
+        "player": {
+          "config": {
+            "vod": {
+              "streaming": {
+                "forceHTTPS": true
+              }
+            }
+          },
+          "playerOverwrite": {
+            "alternativePlayerToUse": "freeview-shakaplayer"
+          }
+        },
+        "stream": {
+          "videoProfileDashVOD": "bigscreendashpr-dyn-stream-1"
+        }
+      },
+      "year": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    },
+    {
+      "description": "Freeview models which are low powered devices",
+      "model": [
+        "fvp4000t",
+        "t3",
+        "t3r"
+      ],
+      "override": {
+        "features": {
+          "visualScrubbing": {
+            "enabled": false
+          }
+        },
+        "hasAnimations": false,
+        "isLowPowered": true
+      }
+    }
+  ],
+  "deviceStrings": {
+    "apiClient": "fvp",
+    "liveStreamClient": "fvp",
+    "vodStreamClient": "fvp"
+  },
+  "disableWildcard": true,
+  "drm": {
+    "audioRobustness": "SW_SECURE_CRYPTO",
+    "videoRobustness": "SW_SECURE_CRYPTO"
+  },
+  "endpoints": {
+    "amazonIapMockGetProductData": "https://{{auth_env}}/online/v2/amazon-iap-mock/getProductData?client={{client}}",
+    "amazonIapMockGetPurchaseUpdates": "https://{{auth_env}}/online/v2/amazon-iap-mock/getPurchaseUpdates?client={{client}}",
+    "amazonIapMockGetUserData": "https://{{auth_env}}/online/v2/amazon-iap-mock/getUserData?client={{client}}",
+    "amazonIapMockNotifyFulfillment": "https://{{auth_env}}/online/v2/amazon-iap-mock/notifyFulfillment?client={{client}}",
+    "amazonIapMockPurchase": "https://{{auth_env}}/online/v2/amazon-iap-mock/purchase?client={{client}}",
+    "amazonMockAddPlaybackEvents": "https://{{auth_env}}/online/v2/amazon-iap-mock/addPlaybackEvents?client={{client}}",
+    "apiProxyClearStorage": "https://{{auth_env}}/online/v2/api-proxy-clear-storage?client={{client}}",
+    "auth": "https://{{auth_env}}/online/v2/auth/token?client={{client}}",
+    "brandHub": "https://{{auth_env}}/online/v1/views/content-hubs/{{brand_title}}.json?deviceGroup={{device_group}}&client={{client}}",
+    "categories": "https://{{auth_env}}/online/v1/views/discovery/{{device_group}}.json?client={{client}}",
+    "checkEmail": "https://{{auth_env}}/online/v1/identity/user/email",
+    "continueWatching": "https://{{auth_env}}/online/v1/user/continue-watching.json?client={{client}}",
+    "cookieConsent": "https://{{auth_env}}/online/v2/device/consent/all?client={{client}}",
+    "derivedKey": "https://{{auth_env}}/online/v2/derivedKey/token.json",
+    "episodeData": "https://{{auth_env}}/online/v1/programmes/episode/{{programme_id}}.json?client={{client}}",
+    "favourites": "https://{{auth_env}}/online/v1/user/favourites.json?client={{client}}",
+    "favouritesAddRemove": "https://{{auth_env}}/online/v1/user/favourites/{{websafe_title}}.json?client={{client}}",
+    "favouritesState": "https://{{auth_env}}/online/v1/user/brands/{{websafe_title}}.json?client={{client}}",
+    "help": "https://assets-corporate.channel4.com/devices/faq/{{id}}/xml",
+    "history": "https://{{auth_env}}/online/v1/user/history/{{programme_id}}.json?client={{client}}",
+    "historyUpdate": "https://{{auth_env}}/online/v1/user/history/{{programme_id}}/{{resume_sec}}.json?client={{client}}",
+    "home": "https://{{auth_env}}/online/v1/views/homepage/{{device_group}}.json?include=extendedImages,continueWatchingBrands&client={{client}}",
+    "ip": "https://{{auth_env}}/online/v1/views/content-hubs/{{websafe_title}}.json?deviceGroup={{device_group}}&client={{client}}",
+    "liveTV": "https://{{auth_env}}/online/v1/programmes/tx-schedule/now-next.json?client={{client}}",
+    "my4": "https://{{auth_env}}/online/v1/views/my4.json?client={{client}}",
+    "pinAuth": "https://{{auth_env}}/online/v2/auth/token",
+    "pinCode": "https://{{auth_env}}/online/v2/auth/pin",
+    "popularSearch": "https://{{auth_env}}/online/v1/search/{{device_group}}?client={{client}}&limit={{limit}}&include=popular",
+    "programmeId": "https://{{auth_env}}/online/v2/views/episode/v2/{{brand_id}}.json?client={{client}}",
+    "querySearch": "https://{{auth_env}}/online/v1/search/{{device_group}}?client={{client}}&limit={{limit}}&q={{query}}",
+    "registerLink": "https://{{auth_env}}/online/v1/identity/email/registration-link",
+    "revoke": "https://{{auth_env}}/online/v2/auth/revoke?client={{client}}",
+    "serverTime": "https://{{auth_env}}/online/v1/live/currentTime?client={{client}}",
+    "subscriptionAccount": "https://{{auth_env}}/online/v2/subscription/account?client={{client}}",
+    "subscriptionProducts": "https://{{auth_env}}/online/v2/subscription/products?client={{client}}",
+    "subscriptionPurchase": "https://{{auth_env}}/online/v2/subscription/purchase?client={{client}}",
+    "subscriptionStatus": "https://{{auth_env}}/online/v2/subscription/status?client={{client}}",
+    "watchMore": "https://{{auth_env}}/online/v1/watch-more/{{programme_id}}.json?client={{client}}"
+  },
+  "env": "prod",
+  "events": {
+    "host": "events.prod.c4cloud.net",
+    "viewCount": {
+      "enabled": false,
+      "endpoint": "https://events.channel4.com/view-count/",
+      "path": "/view-count/"
+    }
+  },
+  "exitOverlayBckButtonDebounceTimeMs": 0,
+  "features": {
+    "acquiredContent": {
+      "enabled": false
+    },
+    "adSubtitles": {
+      "enabled": false
+    },
+    "all4Plus": {
+      "amazonIAP": {
+        "isAmazonIAPAutoRestoreEnabled": false,
+        "isAmazonIAPEnabled": false,
+        "isAmazonRestorePageEnabled": false,
+        "isNavigateToSettingsDirectly": false
+      },
+      "enabled": true,
+      "isAll4PlusUpgradeLinkEnabled": true,
+      "isDeeplinkEnabled": false,
+      "isInPlayerSubscriptionEnabled": true,
+      "isManageSubscriptionPageEnabled": true
+    },
+    "benchmark": {
+      "enabled": false
+    },
+    "continueWatching": {
+      "enableHeartbeat": false,
+      "enableSync": false,
+      "enabled": false,
+      "heartbeatTimeMs": 60000,
+      "minPlaybackReportingPct": 2,
+      "movieProgrammeTypeIds": [],
+      "requestTimeoutMs": 5000,
+      "syncMaxChunkSize": 5
+    },
+    "cookieConsent": {
+      "consentBanner": true,
+      "enabled": true
+    },
+    "creditSqueeze": {
+      "enabled": true
+    },
+    "exclusiveContent": {
+      "enabled": true
+    },
+    "guidance": {
+      "sessionDurationInMins": 30
+    },
+    "logging": {
+      "deeplink_request": false
+    },
+    "mParticle": {
+      "enabled": true
+    },
+    "multiplierOnly": {
+      "enabled": false
+    },
+    "multiplyHint": {
+      "enabled": false
+    },
+    "pauseAd": {
+      "enabled": true
+    },
+    "pinPairing": {
+      "enabled": true
+    },
+    "promoAlert": {
+      "enabled": true
+    },
+    "recentSearchStorageLimits": {
+      "cookie": 0,
+      "file": 20,
+      "local": 20
+    },
+    "searchDeeplink": {
+      "enabled": false
+    },
+    "trickplay": {
+      "ads": {
+        "speed1": 2.5,
+        "speed2": 5,
+        "speed3": 7.5
+      },
+      "content": {
+        "speed1": 15,
+        "speed2": 30,
+        "speed3": 60
+      }
+    },
+    "visualScrubbing": {
+      "defaultVisualScrubberGrid": {
+        "height": "5",
+        "width": "5"
+      },
+      "enabled": true
+    },
+    "watchLive": {
+      "HDChannels": {
+        "4S": true,
+        "C4": true,
+        "E4": true,
+        "F4": true,
+        "M4": true
+      },
+      "activateSubtitleId": -1,
+      "backgroundingSupportEnabled": false,
+      "blockButtonsWhenLoading": true,
+      "enabled": true,
+      "retryAmount": 0,
+      "subtitlesEnabled": false,
+      "timeToFFUponStart": 1020,
+      "titleAnimationUnsupportedModels": [
+        "UE32K5500"
+      ],
+      "trackingHeartbeatThreshold": 900,
+      "videoProfileForLive": "dashpr-live-stream-dvb-dash-sp-tp",
+      "videoProfileForStartAgain": "dashpr-dai-live-stream-iso-dash-mp-tl",
+      "yospace": {
+        "daiEnabledForWLSA": true,
+        "enabled": false,
+        "fallbackMaxRetries": 1,
+        "forcedHD": true,
+        "requestTimeoutMs": 30000,
+        "restartBoundaryEnd": 2,
+        "restartBoundaryStart": 2,
+        "restartBoundaryTooLong": 999,
+        "siteSectionId": "freeview.watchlive.channel4.com/{{channel}}",
+        "startAgainEnabled": false,
+        "streamParameters": {
+          "yo.d.sp": "PT20S",
+          "yo.d.ut": "10000"
+        },
+        "videoProfileForLive": "dashpr-dai-live-stream-iso-dash-mp-tl",
+        "videoProfileForStartAgain": "dashpr-dai-live-stream-iso-dash-mp-tl"
+      }
+    },
+    "welcome": {
+      "enabled": true,
+      "image": "https://assets.bsd.client.streaming.channel4.com/common/imgs/welcome-screen-{RES}.jpg"
+    }
+  },
+  "forceXHR": true,
+  "freewheel": {
+    "display": {
+      "appSponsorSize": {
+        "height": 144,
+        "width": 360
+      },
+      "appSponsorshipUrl": "https://2a7e9.v.fwmrm.net/ad/g/1?nw=174057&csid=freeview.channel4.com/4od&pvrn=@randomNumber@&resp=ad&metr=1;;ptgt=s&envp=g_image2&slau=appspon&slid=appspon&w=@width@&h=@height@",
+      "brandSponsorSize": {
+        "height": 120,
+        "width": 480
+      },
+      "brandSponsorshipUrl": "https://2a7e9.v.fwmrm.net/ad/g/1?nw=174057&csid=freeview.channel4.com/4od&caid=@latestProgId@&pvrn=@randomNumber@&resp=ad&metr=1;;ptgt=s&envp=g_image2&slau=spon&slid=spon&w=@width@&h=@height@",
+      "profile": null,
+      "siteSectionId": "freeview.channel4.com/programmes"
+    },
+    "hdAdEnabled": false,
+    "test": {
+      "networkId": "174055",
+      "profile": "174057:c4_freeview_live",
+      "serverUrl": "https://2a7e9.v.fwmrm.net/ad/g/1"
+    },
+    "useAdProxy": true,
+    "video": {
+      "flagParameter": " sltp vicb qtcb slcb",
+      "metrParameter": "1031"
+    }
+  },
+  "hasAnimations": true,
+  "hasLAOR": true,
+  "hasOwnPin": false,
+  "help": {
+    "clientFaqId": "4183411",
+    "clientPrivacyId": "4195111",
+    "clientTermsId": "1508811"
+  },
+  "isLowPowered": false,
+  "isSigninMandatory": true,
+  "kantar": {
+    "account": "c4freeview",
+    "debug": false,
+    "enabled": true
+  },
+  "launchEventTimeoutMS": 0,
+  "lifecycleEnabled": false,
+  "links": {
+    "channel4PlusUrl": "https://channel4.com/plus?",
+    "passwordResetUrl": "www.channel4.com/{{platformDisplayName}}/password",
+    "qrSignInUrl": "channel4.com/code",
+    "registerOnlineUrl": "www.channel4.com/{{platform}}"
+  },
+  "loaderDelayMs": 500,
+  "maxBufferTimeMs": 60000,
+  "oauth": {
+    "authEnv": "api.channel4.com",
+    "c_key": "gAIcHEF6Y9BvjEL6txk1vL6rCXmAnafp",
+    "c_secret": "24HbtjJJvH3cLt80"
+  },
+  "oldMilestoneTracking": true,
+  "omniture": {
+    "account": "channel4streaming4od",
+    "platform": "freeviewplay",
+    "ssl": true
+  },
+  "onlyTrackUserInvokedResumePause": true,
+  "optimizely": {
+    "datafileURL": "https://cdn.optimizely.com/public/8171642667/s/9106712456_9106712456.json",
+    "enabled": false
+  },
+  "platform": "freeview",
+  "platformDisplayName": "freeview",
+  "player": {
+    "config": {
+      "vod": {},
+      "wl": {
+        "streaming": {
+          "bufferingGoal": 5,
+          "rebufferingGoal": 1
+        }
+      }
+    },
+    "forceMinimumStartBitrateVOD": false,
+    "shakaConfigOverrides": [
+      {
+        "conditions": {
+          "type": "video/mp4"
+        },
+        "config": {
+          "streaming": {
+            "bufferingGoal": 1,
+            "rebufferingGoal": 0
+          }
+        }
+      }
+    ]
+  },
+  "qrCodeEndpoint": "https://qr.bsd.client.streaming.channel4.com/",
+  "quickExit": {
+    "disableExitOverlay": false,
+    "exitCarouselToMenu": false
+  },
+  "reportMediaMetrics": false,
+  "scaleImagesDown": false,
+  "searchDebounceTimeMs": 1000,
+  "secondaryStorageType": "",
+  "shaka": {
+    "abr": {
+      "defaultBandwidthEstimate": 125000,
+      "enabled": true,
+      "switchInterval": 6
+    },
+    "drm": {
+      "retryParameters": {
+        "connectionTimeout": 10000,
+        "stallTimeout": 5000,
+        "timeout": 30000
+      }
+    },
+    "manifest": {
+      "dash": {
+        "ignoreMinBufferTime": true
+      },
+      "retryParameters": {
+        "connectionTimeout": 10000,
+        "stallTimeout": 5000,
+        "timeout": 30000
+      },
+      "segmentRelativeVttTiming": true
+    },
+    "preferredTextLanguage": "en",
+    "streaming": {
+      "bufferBehind": 10,
+      "bufferingGoal": 30,
+      "ignoreTextStreamFailures": true,
+      "maxDisabledTime": 0,
+      "rebufferingGoal": 0.01,
+      "retryParameters": {
+        "connectionTimeout": 10000,
+        "maxAttempts": 4,
+        "stallTimeout": 5000,
+        "timeout": 30000
+      }
+    }
+  },
+  "skipOverlayOnLaunch": false,
+  "storageType": "local",
+  "stream": {
+    "forceHttpStreamUrl": false,
+    "forceHttpsLive": false,
+    "forceHttpsVOD": false,
+    "keys": {
+      "dash": {
+        "iv": "AiL6LengdaeTuz6T",
+        "key": "hP8pR3Y4TYMLx2/QDlD+WRicZD1fdZNaYEgaxPF1ElQ="
+      },
+      "default": {
+        "iv": "IHEFXHXCOINBQICX",
+        "key": "xqBAWcVc2F4zVY2TJ3f9y5uNKgZD0aafkq0YHlFhxZ4="
+      }
+    },
+    "ptcEnabled": false,
+    "videoProfileDashVOD": "dashdvbpr-dyn-stream-1"
+  },
+  "subtitlesEnabled": true,
+  "sumo": {
+    "attachFullShakaErrorData": true,
+    "interval": 10000,
+    "url": "https://monitor.channel4.com/logs/client/bsd/freeview"
+  },
+  "unmountAppOnExit": true,
+  "useDynamicQRCode": true,
+  "useDynamicQRCodeForExclusiveContent": true,
+  "version": 1
+}

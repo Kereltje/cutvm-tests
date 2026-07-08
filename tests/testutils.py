@@ -1,9 +1,34 @@
-
-
+from __future__ import annotations
 import os
 import json
+from unittest.mock import patch
 
 import urlquick
+
+
+patch_1 = None
+
+
+class RealWebRequestMadeError(Exception):
+    pass
+
+
+def setup_local_tests():
+    """Module level fixture for all local tests. Ensures that no unintentional real
+    web requests can occur.
+
+    """
+    global patch_1
+    patch_1 = patch('requests.sessions.Session.send', side_effect=RealWebRequestMadeError)
+    patch_1.start()
+
+
+def tear_down_local_tests():
+    global patch_1
+
+    if patch_1:
+        patch_1.stop()
+        patch_1 = None
 
 
 def open_doc(file_name: str, base_path: str = ''):
