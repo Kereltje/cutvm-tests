@@ -770,3 +770,170 @@ class ApiMy4Access(TestCase):
         self.assertEqual(200, resp.status_code)
         resp_data = resp.json()
         self.check_my4_data(resp_data)
+
+
+class ApiMy4lLists(TestCase):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__my4_data = None
+
+    def my4_data(self):
+        if self.__my4_data is None:
+            resp = requests.get(
+                'https://api.channel4.com/online/v1/views/my4.json',
+                headers=api_auth_headers(DEVICE, {'authorization': 'Bearer ' + TOKENS[DEVICE]['accessToken']}),
+                params={'client': devices[DEVICE]['client']}
+            )
+            self.assertEqual(200, resp.status_code)
+            self.__my4_data = resp.json()
+        return self.__my4_data
+
+    def get_my4_slice(self, slice_type):
+        data = self.my4_data()
+        for data_slice in data['sliceGroups'][0]['slices']:
+            if data_slice['type'] == slice_type:
+                return data_slice
+        else:
+            raise ValueError(f'Unknown slice of type {slice_type}')
+
+    def test_my_four(self):
+        data = self.my4_data()
+        slices = data['sliceGroups'][0]['slices']
+        slice_types = [s['type'] for s in slices]
+        self.assertTrue('CONTINUE_WATCHING' in slice_types)
+        self.assertTrue('MYLIST' in slice_types)
+        self.assertTrue('REMINDERS' in slice_types)
+        self.assertTrue('HISTORY' in slice_types)
+        self.assertTrue('RECOMMENDATIONS' in slice_types)
+
+    def test_watching(self):
+        watching = self.get_my4_slice('CONTINUE_WATCHING')
+        for item in watching['sliceItems'][1:]:
+            self.assertTrue('title' in item)
+            self.assertTrue('summary' in item)
+            self.assertTrue('secondaryTitle' in item)
+            self.assertTrue(item['image']['href'].startswith("https://"))
+            self.assertTrue('websafeTitle' in item['brand'])
+            self.assertTrue('ondemandSeriesCount' in item['brand'])
+            self.assertTrue('ondemandEpisodesCount' in item['brand'])
+
+            self.assertTrue('title' in item['episode'])
+            self.assertTrue('secondaryTitle' in item['episode'])
+            self.assertTrue('episodeNumber' in item['episode'])
+            self.assertTrue('seriesNumber' in item['episode'])
+            self.assertTrue('summary' in item['episode'])
+            # self.assertTrue('firstTXDate' in item['episode'])
+            self.assertTrue('newEpisode' in item['episode'])
+            self.assertTrue('nextEpisode' in item['episode'])
+
+            resume_info = item['episode']['resume']
+            self.assertTrue('lastModified' in resume_info)
+            self.assertTrue('seconds' in resume_info)
+            self.assertTrue('completed' in resume_info)
+
+            stream_info = item['episode']['assetInfo']['streaming']
+            self.assertTrue('assetId' in stream_info)
+            self.assertTrue('duration' in stream_info)
+            self.assertTrue('endDate' in stream_info)
+            self.assertTrue('href' in stream_info)
+            self.assertTrue('vodBSHref' in stream_info)
+            self.assertTrue('subtitles' in stream_info)
+
+
+class MyListEdit(TestCase):
+    """Add to and remove from My List"""
+
+    def test_add_remove_to_mylist(self):
+        headers = api_auth_headers(DEVICE, {'authorization': 'Bearer ' + TOKENS[DEVICE]['accessToken']})
+        # corresponding web url: https://www.channel4.com/my4/api/v1/user/favourites/elementary
+        url = 'https://api.channel4.com/online/v1/user/favourites/elementary.json?client=amazonfire-dash'
+        # ensure the item is not on the list
+        requests.delete(url, headers=headers)
+
+        # Add the item to the list
+        # Yep, a post without content...
+        resp = requests.post(url, headers=headers)
+        self.assertEqual(200, resp.status_code)
+        resp_data = resp.json()
+        self.assertAlmostEqual(resp_data['createdDate']/1000, time.time(), delta=10)
+
+        # Add an item already on the list.
+        resp = requests.post(url, headers=headers)
+        self.assertEqual(200, resp.status_code)
+
+        # Remove an item that is actually on the list.
+        resp = requests.delete(url, headers=headers)
+        self.assertEqual(200, resp.status_code)
+        self.assertEqual('', resp.text)     # no content
+
+        # Remove an item that is noton the list.
+        resp = requests.delete(url, headers=headers)
+        self.assertEqual(200, resp.status_code)
+        self.assertEqual('', resp.text)     # no content
+
+
+class ReportPlayTime(TestCase):
+    def setUp(self):
+        ensure_signed_in()
+
+    def test_report_playtime_web(self):
+        resp = requests.post(
+            url='https://www.channel4.com/player/history/76930-028/300',     # Hollyoaks S01E28
+            headers={
+                'User-Agent': WEB_USER_AGENT,
+                'accept-language': 'en-GB,en;q=0.5',
+                # 'authorization': 'Bearer ' + TOKENS['accessToken'],
+                'sec-fetch-site': 'same-origin',
+                'sec-fetch-mode': 'cors',
+                'sec-fetch-dest': 'empty'},
+            cookies={
+                # insert access JWT
+                'C4_AT': '<REDACTED>',
+            },
+            json={}
+        )
+        self.assertEqual(200, resp.status_code)
+        data = resp.json()
+        self.assertEqual(data['message'], 'OK')
+
+    def test_report_playtime_api(self):
+        resp = requests.put(
+            url='https://api.channel4.com/online/v1/user/history/76930-028/600.json',     # Hollyoaks S01E28
+            headers={
+                'User-Agent': devices[DEVICE]['user_agent'],
+                'accept-language': 'en-GB,en;q=0.5',
+                # 'X-C4-Platform-Name':        'freeview',
+                # 'X-C4-App-Version':          'freeview_app:26.2.0',
+                # 'X-C4-Device-Name':          'mb181',
+                # 'X-C4-Device-Type':          'tv',
+                # 'X-C4-Optimizely-Datafile':  'unknown',
+                'authorization': 'Bearer ' + TOKENS['accessToken'],
+                # 'X-Correlation-Id':          'BSD-' + str(uuid4()),
+                # 'sec-fetch-site': 'same-site',
+                # 'sec-fetch-mode': 'cors',
+                # 'sec-fetch-dest': 'empty',
+                # 'sec-ch-ua-platform':        '"Linux"',
+                # 'sec-ch-ua':                 '"Not/A)Brand";v="8", "Chromium";v="46", "Opera";v="46"',
+                # 'sec-ch-ua-mobile':          '?0',
+                'Pragma':                    'no-cache',
+                'Cache-Control':             'no-cache'
+            },
+            params={'client': devices[DEVICE]['client']},
+            json={}
+        )
+        self.assertEqual(200, resp.status_code)
+        self.assertEqual(resp.content, b'')
+
+    def test_report_playtime_with_invalid_video_id(self):
+        resp = requests.put(
+            url='https://api.channel4.com/online/v1/user/history/76930-925/600.json?client=fvp',
+            headers={
+                'User-Agent': devices[DEVICE]["user_agent"],
+                'accept-language': 'en-GB,en;q=0.5',
+                'authorization': 'Bearer ' + TOKENS['accessToken'],
+                'Pragma':                    'no-cache',
+                'Cache-Control':             'no-cache'
+            },
+            json={}
+        )
+        self.assertEqual(404, resp.status_code)

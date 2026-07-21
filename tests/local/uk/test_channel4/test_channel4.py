@@ -6,18 +6,29 @@ from unittest import TestCase
 from unittest.mock import patch, MagicMock
 
 import requests
-
 import xbmcvfs
 
-import testutils
+from codequick import Listitem
+
 from resources.lib.channels.uk import channel4
 
-from testutils import open_doc, HttpResponse
+from testutils import (
+    open_doc,
+    HttpResponse,
+    setup_local_tests,
+    tear_down_local_tests
+)
 
-setUpModule = testutils.setup_local_tests
-tearDownModule= testutils.tear_down_local_tests
+setUpModule = setup_local_tests
+tearDownModule = tear_down_local_tests
 
 my_dir = os.path.abspath(os.path.dirname(__file__))
+
+
+def check_list_items(testcase: TestCase, items_list: list, count: int):
+    testcase.assertEqual(count, len(items_list))
+    testcase.assertTrue(all(isinstance(item, Listitem) for item in items_list),
+                        "Not all items are Listitem objects.")
 
 
 class LoadChannel4Auth(TestCase):
@@ -297,3 +308,139 @@ class GetAccessToken(TestCase):
 
         # Dialog should never have been called!
         p_dlg.assert_not_called()
+
+
+class MainMenu(TestCase):
+    @patch('urlquick.get', return_value=HttpResponse(text=open_doc('data/api_homepage.json', my_dir)))
+    def test_list_main_menu(self, p_get):
+        items = channel4.main_menu.test()
+        p_get.assert_called_once()
+        check_list_items(self, items, count=29)
+        hero_items = [item for item in items
+                      if '[B][COLOR orange]' in item.info['title'] and '[/COLOR][/B]' in item.info['title']]
+        self.assertEqual(5, len(hero_items))
+
+    @patch('urlquick.get', return_value=HttpResponse(text="Something that is not JSON"))
+    def test_list_main_menu_with_home_page_error(self, p_get):
+        """The whole homepage fails silently, leaving only the static items."""
+        items = channel4.main_menu.test()
+        p_get.assert_called_once()
+        check_list_items(self, items, count=3)
+
+
+@patch('resources.lib.channels.uk.channel4.authenticated_request',
+       return_value=HttpResponse(text=open_doc('data/my4.json', my_dir)))
+class MyListProgrammes(TestCase):
+    def test_get_mylist_programmes_at_programme_start(self, p_request):
+        # Ensure the state is like the start of the addon
+        try:
+            delattr(channel4.get_mylist_programmes, '_my_list_pgms')
+        except AttributeError:
+            pass
+        pgm_list = channel4.get_mylist_programmes()
+        p_request.assert_called_once()
+        self.assertEqual(len(pgm_list), 6)
+
+        # second request should come from cache
+        p_request.reset_mock()
+        pgm_list = channel4.get_mylist_programmes()
+        p_request.assert_not_called()
+        self.assertEqual(len(pgm_list), 6)
+
+    def test_get_mylist_programmes_after_login(self, p_request):
+        # clear the cache by assigning None, like login does.
+        channel4.get_mylist_programmes._my_list_pgms = None
+        pgm_list = channel4.get_mylist_programmes()
+        p_request.assert_called_once()
+        self.assertEqual(len(pgm_list), 6)
+
+        # second request should come again from cache
+        p_request.reset_mock()
+        pgm_list = channel4.get_mylist_programmes()
+        p_request.assert_not_called()
+        self.assertEqual(len(pgm_list), 6)
+
+    def test_get_mylist_programmes_after_logout(self, p_request):
+        # Clear the cache by assigning False, like login does.
+        # False indicates the user is not signed in, so no request will
+        # be made to the backend.
+        channel4.get_mylist_programmes._my_list_pgms = False
+        pgm_list = channel4.get_mylist_programmes()
+        p_request.assert_not_called()
+        self.assertIs(pgm_list, False)
+
+
+@patch('resources.lib.channels.uk.channel4.get_mylist_programmes', return_value=set())
+class My4Lists(TestCase):
+    @patch('urlquick.get')
+    def test_sub_menu_my4(self, p_auth_req, _):
+        items = channel4.submenu_my4.test()
+        p_auth_req.assert_not_called()
+        check_list_items(self, items, count=4)
+
+    @patch('resources.lib.channels.uk.channel4.authenticated_request',
+           return_value=HttpResponse(text=open_doc('data/my4.json', my_dir)))
+    def test_get_mylist_logged_in(self, p_auth_req, _):
+        items = channel4.list_my_four.test(list_type='CONTINUE_WATCHING')
+        p_auth_req.assert_called_once()
+        check_list_items(self, items, count=6)
+
+    @patch('resources.lib.channels.uk.channel4.authenticated_request',
+           return_value=HttpResponse(text=open_doc('data/my4.json', my_dir)))
+    def test_list_my_list(self, p_auth_req, _):
+        items = channel4.list_my_four.test('MYLIST')
+        p_auth_req.assert_called_once()
+        check_list_items(self, items, count=6)
+
+    @patch('resources.lib.channels.uk.channel4.authenticated_request',
+           return_value=HttpResponse(text=open_doc('data/my4.json', my_dir)))
+    def test_list_history(self, p_auth_req, _):
+        items = channel4.list_my_four.test('HISTORY')
+        p_auth_req.assert_called_once()
+        self.assertEqual(6, len(items))
+        self.assertIsNone(items[1])   # Item is an episode that is no longer available.
+        self.assertTrue(all(isinstance(item, Listitem) for item in items if items.index(item) != 1))
+
+    @patch('resources.lib.channels.uk.channel4.authenticated_request',
+           return_value=HttpResponse(text=open_doc('data/my4.json', my_dir)))
+    def test_list_recommendations(self, p_auth_req, _):
+        items = channel4.list_my_four.test('RECOMMENDATIONS')
+        p_auth_req.assert_called_once()
+        check_list_items(self, items, count=8)
+
+    def test_empty_list(self, _):
+        """Codequick always reports an empty list as a failure to Kodi.
+        To work around this and just let Kodi display an actual empty list, we
+        call endOfDirectory() ourselves and exit before codequick can interfere.
+
+        """
+        # This `freeform` item is always present, even on empty lists.
+        list_data = {
+            "title": "Watching",
+            "type": "CONTINUE_WATCHING",
+            "sliceItems": [
+                {
+                    "title": "",
+                    "type": "freeform",
+                    "summary": "Resume unfinished shows and see new available episodes",
+                    "secondaryTitle": "",
+                    "label": "",
+                    "caption": ""
+                },
+            ],
+        }
+        with patch('resources.lib.channels.uk.channel4.get_my_four', return_value=list_data) as p_myfour:
+            with patch('xbmcplugin.endOfDirectory') as p_end_dir:
+                self.assertRaises(SystemExit, channel4.list_my_four.test, 'CONTINUE_WATCHING')
+            p_myfour.assert_called_once()
+            p_end_dir.assert_called_once_with(-1, True)
+
+    @patch('resources.lib.channels.uk.channel4.authenticated_request',
+           return_value=None)
+    def test_not_authentitacted(self, p_auth_req, _):
+        """The returned value should be False, or a list with a single item that
+        is False, to explicitly indicate to codequick that the folder is empty.
+        """
+        items = channel4.list_my_four.test('RECOMMENDATIONS')
+        p_auth_req.assert_called_once()
+        self.assertListEqual([False], items)
