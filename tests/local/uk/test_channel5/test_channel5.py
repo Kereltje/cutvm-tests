@@ -23,7 +23,7 @@ class TestMainPage(TestCase):
     @patch('urlquick.get',
            return_value=HttpResponse(200, text=open_doc('PLC_My5DesktopFeaturedRail.json', my_dir)))
     def test_parse_hero_items(self, _):
-        li_items = list(my5.list_corona_collection('hero'))
+        li_items = list(my5.list_corona_collection.test('hero'))
         self.assertEqual(10, len(li_items))
         for li in li_items:
             self.assertIsInstance(li, Listitem)
@@ -44,6 +44,7 @@ class TestMainPage(TestCase):
         for li in li_items:
             self.assertIsInstance(li, Listitem)
 
+
 @patch('resources.lib.channels.uk.my5.get_session_token', return_value='kjg')
 class TestMy5(TestCase):
     @patch('urlquick.get',
@@ -51,6 +52,16 @@ class TestMy5(TestCase):
     def test_continue_watching(self, _, __):
         li_items = my5.list_continue_watching.test()
         self.assertEqual(13, len(li_items))
+        for li in li_items:
+            self.assertIsInstance(li, Listitem)
+
+
+class TestCollections(TestCase):
+    @patch('urlquick.get',
+           return_value=HttpResponse(200, text=open_doc('PLC_My5DesktopFASTHomePageSubNav.json', my_dir)))
+    def test_list_collections(self, _):
+        li_items = my5.list_collections.test(browse_name='PLC_My5DesktopFASTHomePageSubNav')
+        self.assertEqual(21, len(li_items))
         for li in li_items:
             self.assertIsInstance(li, Listitem)
 

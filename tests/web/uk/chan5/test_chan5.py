@@ -50,7 +50,7 @@ class TestMenu(TestCase):
 class Collections(TestCase):
     @classmethod
     def setUpClass(cls):
-        xbmc.getRegion =  lambda x: '%Y-%m-%d' if x == 'dateshort' else '%H:%M:%S'
+        xbmc.getRegion = lambda x: '%Y-%m-%d' if x == 'dateshort' else '%H:%M:%S'
 
     def test_collection_live(self):
         items = list(my5.list_collections.test(browse_name='PLC_My5FASTLiveTVPageSubTempWithAMC'))
